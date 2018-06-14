@@ -6,14 +6,10 @@ const gulp        = require('gulp'),
       babel       = require('gulp-babel'),
       rename      = require('gulp-rename'),
       fileinclude = require('gulp-file-include');     
-      
-gulp.task('copyHTML', () => {
+     
+// HTML / Includes task
+gulp.task('fileinclude', () => {
   gulp.src('src/*.html')
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('fileinclude', function() {
-  gulp.src('src/index.html')
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -21,6 +17,7 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('dist'));
 });
 
+// Sass task
 gulp.task('sass', () => {
   gulp.src('src/styles/main.sass')
     .pipe(sass( { 
@@ -33,6 +30,7 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('dist/styles'))
 })
 
+// Imagemin task
 gulp.task('imagemin', () => {
   gulp.src('src/styles/images/*')
     .pipe(imagemin())
@@ -50,16 +48,17 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest('dist/scripts'));
 });
 
+// Default task
 gulp.task('default', [
-  'copyHTML',
   'fileinclude',
   'sass',
   'imagemin',
   'scripts'
 ]);
 
+// Watch task
 gulp.task('watch', () => {
-  gulp.watch('src/*.html', ['copyHTML']);
+  gulp.watch('src/*.html', ['fileinclude']);
   gulp.watch('src/styles/images/*', ['imagemin']);
   gulp.watch('src/styles/**/*.sass', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['script']);
