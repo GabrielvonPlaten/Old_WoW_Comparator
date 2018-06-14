@@ -4,10 +4,20 @@ const gulp        = require('gulp'),
       sass        = require('gulp-sass'),
       concat      = require('gulp-concat'),
       babel       = require('gulp-babel'),
-      rename      = require('gulp-rename');
+      rename      = require('gulp-rename'),
+      fileinclude = require('gulp-file-include');     
       
 gulp.task('copyHTML', () => {
   gulp.src('src/*.html')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('fileinclude', function() {
+  gulp.src('src/index.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest('dist'));
 });
 
@@ -42,14 +52,15 @@ gulp.task('scripts', () => {
 
 gulp.task('default', [
   'copyHTML',
-  'imagemin',
+  'fileinclude',
   'sass',
+  'imagemin',
   'scripts'
 ]);
 
 gulp.task('watch', () => {
-  gulp.watch('src/*.html', ['copyHTML'])
-  gulp.watch('src/styles/images/*', ['imagemin'])
-  gulp.watch('src/styles/**/*.sass', ['sass'])
-  gulp.watch('src/scripts/**/*.js', ['script'])
+  gulp.watch('src/*.html', ['copyHTML']);
+  gulp.watch('src/styles/images/*', ['imagemin']);
+  gulp.watch('src/styles/**/*.sass', ['sass']);
+  gulp.watch('src/scripts/**/*.js', ['script']);
 });
