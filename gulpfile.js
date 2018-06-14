@@ -1,6 +1,7 @@
 const gulp        = require('gulp'),
       imagemin    = require('gulp-imagemin'),
       uglify      = require('gulp-uglify'),
+      minHTML     = require('gulp-minify-html'),
       sass        = require('gulp-sass'),
       concat      = require('gulp-concat'),
       babel       = require('gulp-babel'),
@@ -14,6 +15,7 @@ gulp.task('fileinclude', () => {
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(minHTML())
     .pipe(gulp.dest('dist'));
 });
 
