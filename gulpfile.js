@@ -7,7 +7,13 @@ const gulp        = require('gulp'),
       babel       = require('gulp-babel'),
       rename      = require('gulp-rename'),
       fileinclude = require('gulp-file-include');     
-     
+
+// HTML task
+gulp.task('copyHTML', () => {
+  gulp.src('src/*.html')
+      .pipe(gulp.dest('dist'))
+})
+
 // HTML / Includes task
 gulp.task('fileinclude', () => {
   gulp.src('src/*.html')
@@ -55,6 +61,7 @@ gulp.task('scripts', () => {
 
 // Default task
 gulp.task('default', [
+  'copyHTML',
   'fileinclude',
   'sass',
   'imagemin',
@@ -63,7 +70,8 @@ gulp.task('default', [
 
 // Watch task
 gulp.task('watch', () => {
-  gulp.watch('src/*.html', ['fileinclude']);
+  gulp.watch('src/**/*.html', ['copyHTML']);
+  gulp.watch('src/**/*.html', ['fileinclude']);
   gulp.watch('src/styles/images/*', ['imagemin']);
   gulp.watch('src/styles/**/*.sass', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['script']);
