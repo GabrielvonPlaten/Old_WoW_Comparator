@@ -1,0 +1,120 @@
+.comparator
+  height: auto
+  
+  .player
+    margin: 0 auto
+    width: 80%
+    height: 120px
+    border-radius: 5px
+    background-color: $Port_Gore
+
+.form
+  padding: 7px 0 0 0
+
+  h3
+    margin: 0
+    padding: 0
+    color: $Alto
+    font-weight: 300
+
+  input
+    background-color: $Mirage
+    color: $Alto
+    border: none
+    font-size: 19px
+    font-style: Italic
+    font-weight: 300
+    margin-top: 7px
+    padding: 3px
+
+  &__playerOne
+    float: left
+    margin-left: 20px
+
+  &__playerTwo
+    float: right
+    margin-right: 20px
+
+// Line Form
+.line__form
+  position: relative
+  top: 58
+  width: 100px
+
+.line__divide
+  position: relative
+  top: 325
+  width: 800px
+
+.buttonContainer
+  padding: 20px 0
+  text-align: center
+
+// Comparator Global
+.separation
+  display: grid
+  grid-template-columns: 1fr 1fr
+
+  .separation__playerOne
+
+    .ui__playerOne
+      height: 100%
+      width: 90%
+      margin: 0 auto
+
+  .separation__playerTwo
+  
+    .ui__playerTwo
+      height: 100%
+      width: 90%
+      margin: 0 auto
+
+// AVATAR
+.avatar
+  text-align: center
+  margin: 0 auto 5em auto
+
+  h2
+    color: $Alto
+    font-weight: 300
+
+/* 
+
+  MAIN STATS  
+  
+ */
+.baseStat
+  color: $Alto
+  font-weight: 300
+  font-size: 18px
+  font-style: italic
+
+.playerOne__baseStats
+  ul
+    li
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      margin-top: 10px
+      font-size: 1.2em
+
+      .statNumber
+        float: right
+        color: $Bright_Turquoise
+
+.playerTwo__baseStats
+  ul
+    li
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: right
+      list-style-position: inside
+
+      .statNumber
+        float: left
+        color: $Bright_Turquoise

@@ -1,3 +1,137 @@
 @@include('./_partials/_header.html')
 
+<div class="comparator">
+  <div class="player">
+    <form class="form form__playerOne">
+      <h3>Player One</h3>
+      <input type="text" placeholder="Realm"><br>
+      <input type="text" placeholder="Name">
+      <button class="btn btn--blue btn--mb">Search</button>
+    </form>
+
+    <div class="line line--vertical line--short line--margin line__form"></div>
+
+    <form class="form form__playerTwo">
+        <h3>Player Two</h3>
+        <input type="text" placeholder="Realm"><br>
+        <input type="text" placeholder="Name">
+        <button class="btn btn--blue btn--mb">Search</button>
+    </form>
+  </div>
+  <div class="buttonContainer">
+    <button class="btn btn--purple">Feed</button>
+    <button class="btn btn--purple">Mounts</button>
+    <button class="btn btn--purple">Stats</button>
+    <button class="btn btn--purple">Progress</button>
+    <button class="btn btn--purple">Gear</button>
+  </div>
+
+  <!-- <div class="line line--vertical line--short line--margin line__divide"></div> -->
+
+  <div class="separation">
+    <div class="separation__playerOne">
+      <div class="avatar">
+        <img src="http://render-api-eu.worldofwarcraft.com/static-render/eu/tyrande/187/51158203-avatar.jpg">
+        <br>
+        <h2>Metapelo</h2>
+      </div>
+      <div class="ui__playerOne playerOne__baseStats" id="UI-mainStats__playerOne">
+        <span class="baseStat">Base Stat</span>
+        <ul>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+        </ul>
+        <br>
+        <span class="baseStat">Defense</span>
+        <ul>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+        </ul>
+        <br>
+        <span class="baseStat">Melee</span>
+        <ul>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+        </ul>
+        <br>
+        <span class="baseStat">Ranged</span>
+        <ul>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+        </ul>
+        <br>
+        <span class="baseStat">Caster Info</span>
+        <ul>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+          <li>Stat<span class="statNumber">23495</span></li>
+        </ul>
+      </div>
+      <div class="ui__playerOne" id="UI-mounts__playerOne"></div>
+      <div class="ui__playerOne" id="UI-gear__playerOne"></div>
+      <div class="ui__playerOne" id="UI-feed__playerOne"></div>
+      <div class="ui__playerOne" id="UI-progess__playerOne"></div>
+    </div>
+    <div class="separation__playerTwo">
+      <div class="avatar">
+        <img src="http://render-api-eu.worldofwarcraft.com/static-render/eu/tyrande/187/51158203-avatar.jpg">
+        <br>
+        <h2>Metapelo</h2>
+      </div>
+      <div class="ui__playerTwo playerTwo__baseStats" id="UI-mainStats__playerTwo">
+          <span class="baseStat">Base Stat</span>
+          <ul>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+          </ul>
+          <br>
+          <span class="baseStat">Defense</span>
+          <ul>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+          </ul>
+          <br>
+          <span class="baseStat">Melee</span>
+          <ul>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+          </ul>
+          <br>
+          <span class="baseStat">Ranged</span>
+          <ul>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+          </ul>
+          <br>
+          <span class="baseStat">Caster Info</span>
+          <ul>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+            <li><span class="statNumber">23495</span>Stat</li>
+          </ul>
+      </div>
+      <div class="ui__playerOne" id="UI-mainStats__playerOne"></div>
+      <div class="ui__playerTwo" id="UI-mounts__playerTwo"></div>
+      <div class="ui__playerTwo" id="UI-gear__playerTwo"></div>
+      <div class="ui__playerTwo" id="UI-feed__playerTwo"></div>
+      <div class="ui__playerTwo" id="UI-progess__playerTwo"></div>
+    </div>
+  </div>
+
+</div>
+
 @@include('./_partials/_footer.html')
