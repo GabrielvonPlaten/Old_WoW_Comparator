@@ -1,5 +1,5 @@
 class HTTPCall__PlayerOne {
-  async get(url) {
+  async get_API(url) {
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -7,7 +7,7 @@ class HTTPCall__PlayerOne {
 }
 
 class HTTPCall_PlayerTwo {
-  async get(url) {
+  async get_API(url) {
     const response = await fetch(url);
     const data = await response.json();
     return data;

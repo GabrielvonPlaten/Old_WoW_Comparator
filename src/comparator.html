@@ -19,11 +19,11 @@
     </form>
   </div>
   <div class="buttonContainer">
-    <button class="btn btn--purple" value="off">Feed</button>
-    <button class="btn btn--purple" value="off">Mounts</button>
-    <button class="btn btn--purple" value="on">Stats</button>
-    <button class="btn btn--purple" value="off">Progress</button>
-    <button class="btn btn--purple" value="off">Gear</button>
+    <button class="btn btn--purple" id="js-feed" value="off">Feed</button>
+    <button class="btn btn--purple" id="js-mounts" value="off">Mounts</button>
+    <button class="btn btn--purple" id="js-stats" value="on">Stats</button>
+    <button class="btn btn--purple" id="js-prog" value="off">Progress</button>
+    <button class="btn btn--purple" id="js-gear" value="off">Gear</button>
   </div>
 
   <!-- <div class="line line--vertical line--short line--margin line__divide"></div> -->
@@ -32,18 +32,46 @@
     <div class="separation__playerOne">
       <div class="avatar" id="UI-avatar__playerOne"></div>
       <div class="ui__playerOne playerOne__baseStats" id="UI-mainStats__playerOne"></div>
-      <div class="ui__playerOne" id="UI-mounts__playerOne"></div>
-      <div class="ui__playerOne" id="UI-gear__playerOne"></div>
-      <div class="ui__playerOne" id="UI-feed__playerOne"></div>
-      <div class="ui__playerOne" id="UI-progess__playerOne"></div>
+      <div class="ui__playerOne playerOne__mounts" id="UI-mounts__playerOne">
+        <ul>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--rare"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--rare"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--rare"></div><span>DireHorn</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--common"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+            <li><div class="mounts--common"></div><span>Triceratopsmount Yellow Longer</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+        </ul>
+      </div>
+      <div class="ui__playerOne playerOne__gear" id="UI-gear__playerOne"></div>
+      <div class="ui__playerOne playerOne__feed" id="UI-feed__playerOne"></div>
+      <div class="ui__playerOne playerOne__progress" id="UI-progess__playerOne"></div>
     </div>
     <div class="separation__playerTwo">
       <div class="avatar" id="UI-avatar__playerTwo"></div>
       <div class="ui__playerTwo playerTwo__baseStats" id="UI-mainStats__playerTwo"></div>
-      <div class="ui__playerTwo" id="UI-mounts__playerTwo"></div>
-      <div class="ui__playerTwo" id="UI-gear__playerTwo"></div>
-      <div class="ui__playerTwo" id="UI-feed__playerTwo"></div>
-      <div class="ui__playerTwo" id="UI-progess__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__mounts" id="UI-mounts__playerTwo">
+          <ul>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--epic"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--rare"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--rare"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--rare"></div><span>DireHorn</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--common"></div><span>DireHorn Mount</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+              <li><div class="mounts--common"></div><span>Triceratopsmount Yellow Longer</span><img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_triceratopsmount_yellow.jpg"></li>
+          </ul>
+      </div>
+      <div class="ui__playerTwo playerTwo__gear" id="UI-gear__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__feed" id="UI-feed__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__progess" id="UI-progess__playerTwo"></div>
     </div>
   </div>
 
