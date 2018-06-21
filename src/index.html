@@ -11,6 +11,34 @@
 <body>
   @@include('./_partials/_header.html')
 
+  <div class="jumbotron">
+      <div class="jumbotron__container">
+        <h1>WoW Comparator</h1>
+        <p>Compare your World of Warcraft character’s stats, achievements, mounts, and progress with other’s peoples characters!</p>
+    
+        <a href="compare.html" class="btn btn--purple btn--mt">Start Comparing!</a>
+      </div>
+    </div>
+    
+    <div class="line line--vertical line--short line--margin"></div>
+    
+    <div class="boxContainer">
+      <div class="boxContainer__box">
+        <h2>API</h2>
+        <p>Using Blizzard’s API, you can fetch the data available of any character by searching for its name and realm.</p>
+      </div>
+      <div class="boxContainer__box">
+        <h2>DATA</h2>
+        <p>Stats, Progress, Loot, Mounts. Receive the same data you have in-game here!</p>
+      </div>
+      <div class="boxContainer__box">
+        <h2>COMPARE</h2>
+        <p>Compare your character’s data with another character! See how far -- or behind -- you are with your friends!</p>
+      </div>
+    </div>
+
+  <!-- Footer -->
+  @@include('./_partials/_footer.html')
   
   <script src="scripts/main.min.js"></script>
 </body>
