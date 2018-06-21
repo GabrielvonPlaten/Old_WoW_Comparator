@@ -41,11 +41,14 @@ gulp.task('imagemin', () => {
 
 gulp.task('scripts', () => {
   gulp.src('src/scripts/**/*.js')
-    .pipe(babel({presets: ['es2015']}))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .on('error', (err) => { 
-      gutil.log(gutil.colors.red('[Error]'), err.toString()
+      gutil.log(gutil.colors.red('[Error]'), 
+      err.toString()
     ); })
     .pipe(gulp.dest('dist/scripts'));
 });

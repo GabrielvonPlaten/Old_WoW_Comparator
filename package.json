@@ -1,7 +1,7 @@
 {
   "name": "WoW_Comparator",
   "version": "1.0.0",
-  "description": "",
+  "description": "WoW_Comparator compares two EU characters from the massive multipleyer video game World of Warcraft.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
