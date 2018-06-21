@@ -50,7 +50,7 @@ gulp.task('scripts', () => {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(concat('main.min.js'))
     .on('error', (err) => { 
       gutil.log(gutil.colors.red('[Error]'), 
@@ -74,5 +74,5 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.html', ['fileinclude']);
   gulp.watch('src/styles/images/*', ['imagemin']);
   gulp.watch('src/styles/**/*.sass', ['sass']);
-  gulp.watch('src/scripts/**/*.js', ['script']);
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
 });
