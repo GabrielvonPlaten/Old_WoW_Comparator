@@ -2,6 +2,10 @@ class UI__PlayerTwo {
   constructor() {
     this.avatarImage = document.querySelector('#UI-avatar__playerTwo');
     this.statsContainer = document.querySelector('#UI-mainStats__playerTwo');
+    this.mountsContainer = document.querySelector('#UI-mounts__playerTwo');
+    this.gearContainer = document.querySelector('#UI-gear__playerTwo');
+    this.feedContainer = document.querySelector('#UI-feed__playerTwo');
+    this.progContainer = document.querySelector('#UI-progress__playerTwo');
   }
 
   avatar__PlayerTwo(data) {
@@ -9,7 +13,7 @@ class UI__PlayerTwo {
     let output = '';
 
     output += `
-      <img src=http://render-api-eu.worldofwarcraft.com/static-render/eu/${data.thumbnail}>
+      <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
       <br>
       <h2>${data.name}</h2>
     `;
@@ -57,6 +61,32 @@ class UI__PlayerTwo {
     `;
 
     statsContainer.innerHTML = output;
+    };
 
-    }
+    getMounts__PlayerTwo(data) {
+      let container = this.mountsContainer;
+      let output = '';
+
+      data.mounts.collected.forEach((mount) => {
+        if(mount.qualityId === 4) {
+          output += `
+          <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        } else if(mount.qualityId === 3) {
+          output += `
+          <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        } else if(mount.qualityId === 1) {
+          output += `
+          <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        };
+      });
+
+      container.innerHTML = `
+        <ul>
+          <p>Collected: ${data.mounts.numCollected}</p>
+          ${output}
+        </ul>`;
+  }
 }

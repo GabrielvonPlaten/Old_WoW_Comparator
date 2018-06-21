@@ -51,6 +51,12 @@
   text-align: center
 
 // Comparator Global
+.playerOne__mounts, .playerOne__gear, .playerOne__feed, .playerOne__progress
+  display: none
+
+.playerTwo__mounts, .playerTwo__gear, .playerTwo__feed, .playerTwo__progess
+  display: none
+
 .separation
   display: grid
   grid-template-columns: 1fr 1fr
@@ -99,6 +105,8 @@
       width: 100%
       margin-top: 10px
       font-size: 1.2em
+      &:hover
+        background-color: $Port_Gore-Light
 
       .statNumber
         float: right
@@ -115,7 +123,94 @@
       font-size: 1.2em
       text-align: right
       list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
 
       .statNumber
         float: left
         color: $Bright_Turquoise
+
+/* 
+  
+  MOUNTS 
+    
+  */
+.mounts--epic
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $Seance
+  margin-top: 2px
+
+.mounts--rare
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: blue
+  margin-top: 2px
+
+.mounts--common
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $Alto
+  margin-top: 2px
+
+.playerOne__mounts
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: right
+      float: right
+      width: 65%
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: right
+        margin-left: 1em
+
+      .mounts--epic, .mounts--rare, .mounts--common
+        float: left
+
+    p
+      text-align: right
+      color: $Alto
+
+.playerTwo__mounts
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: left
+      float: left
+      width: 65%
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: left
+        margin-right: 1em
+
+      .mounts--epic, .mounts--rare, .mounts--common
+        float: right
+
+    p
+      text-align: left
+      color: $Alto
+
