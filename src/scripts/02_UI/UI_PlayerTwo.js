@@ -6,9 +6,20 @@ class UI__PlayerTwo {
     this.gearContainer = document.querySelector('#UI-gear__playerTwo');
     this.feedContainer = document.querySelector('#UI-feed__playerTwo');
     this.progContainer = document.querySelector('#UI-progress__playerTwo');
+
+    this.errContainer = document.querySelector('#UI-error__playerTwo');
+
+    this.spinner = document.querySelector('#UI-spinner__PlayerTwo');
+  }
+  loading() {
+    let spinner = this.spinner;
+
+    spinner.style.display = 'block';
   }
 
   avatar__PlayerTwo(data) {
+    let spinner = this.spinner;
+    let errContainer = this.errContainer;
     let avatarContainer = this.avatarImage;
     let output = '';
 
@@ -19,7 +30,12 @@ class UI__PlayerTwo {
     `;
 
     avatarContainer.innerHTML = output;
+    errContainer.innerHTML = '';
+    errContainer.style.display = 'none';
+    spinner.style.display = 'none';
   }
+
+  
 
   baseStats__PlayerTwo(data) {
     let statsContainer = this.statsContainer;
@@ -61,6 +77,7 @@ class UI__PlayerTwo {
     `;
 
     statsContainer.innerHTML = output;
+    
     };
 
     getMounts__PlayerTwo(data) {
@@ -88,5 +105,17 @@ class UI__PlayerTwo {
           <p>Collected: ${data.mounts.numCollected}</p>
           ${output}
         </ul>`;
+  };
+
+  errorMessage(msg, color) {
+    let errContainer = this.errContainer;
+    
+    errContainer.style.color = color;
+    errContainer.style.display = '';
+    errContainer.textContent = msg;
+
+    setTimeout(() => {
+      errContainer.style.display = 'none'
+    }, 3500);
   }
 }

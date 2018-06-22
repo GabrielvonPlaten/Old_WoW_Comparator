@@ -8,9 +8,21 @@ class UI__PlayerOne {
     this.gearContainer = document.querySelector('#UI-gear__playerOne');
     this.feedContainer = document.querySelector('#UI-feed__playerOne');
     this.progContainer = document.querySelector('#UI-progress__playerOne');
+    
+    this.errContainer = document.querySelector('#UI-error__playerOne');
+    
+    this.spinner = document.querySelector('#UI-spinner__PlayerOne');
+  }
+
+  loading() {
+    let spinner = this.spinner;
+
+    spinner.style.display = 'block';
   }
 
   avatar__PlayerOne(data) {
+    let spinner = this.spinner;
+    let errContainer = this.errContainer;
     let avatarContainer = this.avatarImage;
     let output = '';
 
@@ -18,9 +30,13 @@ class UI__PlayerOne {
       <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
       <br>
       <h2>${data.name}</h2>
-    `;
+    `;  
 
     avatarContainer.innerHTML = output;
+
+    errContainer.innerHTML = '';
+    errContainer.style.display = 'none';
+    spinner.style.display = 'none';
   }
 
   baseStats__PlayerOne(data) {
@@ -90,5 +106,19 @@ class UI__PlayerOne {
           <p>Collected: ${data.mounts.numCollected}</p>
           ${output}
         </ul>`;
+    };
+
+
+    errorMessage(msg, color) {
+      let errContainer = this.errContainer;
+      
+      errContainer.style.color = color;
+      errContainer.style.display = '';
+      errContainer.textContent = msg;
+  
+      setTimeout(() => {
+        errContainer.style.display = 'none'
+      }, 3500);
     }
+
 }

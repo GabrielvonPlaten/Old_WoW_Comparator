@@ -13,27 +13,30 @@ playerOne_Form.addEventListener('submit', (e) => {
 
   const http_playerOne = new HTTPCall__PlayerOne;
   const ui_P_One = new UI__PlayerOne;
-  const ui_Message = new UIMessage;
 
-  // Base Stats API
+
+  
   if(playerOne_Realm === '' || playerOne_Name === '') {
-    ui_Message.getMessage('Please fill in the fields.');
+    ui_P_One.errorMessage('Please fill in both fields.', 'red');
+
   } else {
+    ui_P_One.loading();
     http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
       .then(data => {
         console.log(data)
         ui_P_One.avatar__PlayerOne(data)
         ui_P_One.baseStats__PlayerOne(data)
       })
-      .catch((err) => console.log(err));
+      .catch(() => {
+        ui_P_One.errorMessage('Wrong input or player not found.', 'red');
+      });
 
       // Mounts
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=mounts&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
           console.log(data)
           ui_P_One.getMounts__PlayerOne(data);
-        })
-        .catch((err) => console.log(err));
+        });
   }
 });
 
@@ -46,24 +49,27 @@ playerTwo_Form.addEventListener('submit', (e) => {
 
       const http_playerTwo = new HTTPCall_PlayerTwo;
       const ui_P_Two = new UI__PlayerTwo;
-      const ui_Message = new UIMessage;
+
 
       if(playerTwo_Realm === '' || playerTwo_Name === '') {
-        ui_Message.getMessage('Please fill in the fields.');
+        ui_P_Two.errorMessage('Please fill in both fields.', 'red');
+
       } else {
+        ui_P_Two.loading();
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
           ui_P_Two.avatar__PlayerTwo(data)
           ui_P_Two.baseStats__PlayerTwo(data);
         })
-        .catch((err) => console.log(err));
+        .catch(() => {
+          ui_P_Two.errorMessage('Wrong input or player not found.', 'red');
+        });
 
         // Mounts
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=mounts&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
           ui_P_Two.getMounts__PlayerTwo(data);
-        })
-        .catch((err) => console.log(err));
+        });
       }
 });
 
