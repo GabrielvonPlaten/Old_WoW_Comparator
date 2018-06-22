@@ -22,7 +22,6 @@ class UI__PlayerOne {
 
   avatar__PlayerOne(data) {
     let spinner = this.spinner;
-    let errContainer = this.errContainer;
     let avatarContainer = this.avatarImage;
     let output = '';
 
@@ -34,9 +33,8 @@ class UI__PlayerOne {
 
     avatarContainer.innerHTML = output;
 
-    errContainer.innerHTML = '';
-    errContainer.style.display = 'none';
     spinner.style.display = 'none';
+    this.clearErr();
   }
 
   baseStats__PlayerOne(data) {
@@ -115,10 +113,16 @@ class UI__PlayerOne {
       errContainer.style.color = color;
       errContainer.style.display = '';
       errContainer.textContent = msg;
-  
-      setTimeout(() => {
-        errContainer.style.display = 'none'
-      }, 3500);
+
+      let spinner = this.spinner;
+      spinner.style.display = 'none';
+    }
+
+    clearErr() {
+      let errContainer = this.errContainer;
+
+      errContainer.textContent = '';
+      errContainer.style.display = 'none';
     }
 
 }

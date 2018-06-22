@@ -30,9 +30,8 @@ class UI__PlayerTwo {
     `;
 
     avatarContainer.innerHTML = output;
-    errContainer.innerHTML = '';
-    errContainer.style.display = 'none';
     spinner.style.display = 'none';
+    this.clearErr();
   }
 
   
@@ -114,8 +113,14 @@ class UI__PlayerTwo {
     errContainer.style.display = '';
     errContainer.textContent = msg;
 
-    setTimeout(() => {
-      errContainer.style.display = 'none'
-    }, 3500);
+    let spinner = this.spinner;
+    spinner.style.display = 'none';
+  }
+
+  clearErr() {
+    let errContainer = this.errContainer;
+
+    errContainer.textContent = '';
+    errContainer.style.display = 'none';
   }
 }
