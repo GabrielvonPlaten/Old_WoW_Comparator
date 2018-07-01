@@ -19,7 +19,6 @@ class UI__PlayerTwo {
 
   avatar__PlayerTwo(data) {
     let spinner = this.spinner;
-    let errContainer = this.errContainer;
     let avatarContainer = this.avatarImage;
     let output = '';
 
@@ -79,32 +78,93 @@ class UI__PlayerTwo {
     
     };
 
-    getMounts__PlayerTwo(data) {
-      let container = this.mountsContainer;
-      let output = '';
+  getMounts__PlayerTwo(data) {
+    let container = this.mountsContainer;
+    let output = '';
 
-      data.mounts.collected.forEach((mount) => {
-        if(mount.qualityId === 4) {
-          output += `
-          <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        } else if(mount.qualityId === 3) {
-          output += `
-          <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        } else if(mount.qualityId === 1) {
-          output += `
-          <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        };
-      });
+    data.mounts.collected.forEach((mount) => {
+      if(mount.qualityId === 4) {
+        output += `
+        <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      } else if(mount.qualityId === 3) {
+        output += `
+        <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      } else if(mount.qualityId === 1) {
+        output += `
+        <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      };
+    });
 
-      container.innerHTML = `
-        <ul>
-          <p>Collected: ${data.mounts.numCollected}</p>
-          ${output}
-        </ul>`;
+    container.innerHTML = `
+      <ul>
+        <p>Collected: ${data.mounts.numCollected}</p>
+        ${output}
+      </ul>`;
   };
+
+  // Feed
+  getFeed__PlayerTwo(data) {
+    let container = this.feedContainer;
+    let output = '';
+    let counter = 0;
+
+    data.feed.forEach((feed) => {
+      if(feed.type === "LOOT") {
+        counter++;
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+        output += `
+          <h2 style="color: red">I am Loot!</h2>
+          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          <p>${feed.itemId}</p>
+          <p style="color: yellow">${counter}</p>
+          <hr>
+        `;
+      }
+
+      if(feed.type === "ACHIEVEMENT") {
+        counter++;
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+        output += `
+          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
+          <h2>${feed.achievement.title}</h2>
+          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          <p>${feed.achievement.description}</p>
+          <b>Points: ${feed.achievement.points}</b>
+          <p style="color: yellow">${counter}</p>
+          <hr>
+        `;
+      }
+
+      if(feed.type === "CRITERIA") {
+        counter++;
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+        output += `
+          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
+          <h2>CRITERIA: ${feed.achievement.title}</h2>
+          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          <p>${feed.achievement.description}</p>
+          <b>Points: ${feed.achievement.points}</b>
+          <p style="color: yellow">${counter}</p>
+          <hr>
+        `;
+      }
+    });
+
+    container.innerHTML = output;
+    counter = 0;
+  }
 
   errorMessage(msg, color) {
     let errContainer = this.errContainer;
