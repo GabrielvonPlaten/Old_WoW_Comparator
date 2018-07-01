@@ -106,81 +106,38 @@ class UI__PlayerOne {
         </ul>`;
     };
 
-    // Feed
-    getFeed__PlayerOne(data) {
-      let container = this.feedContainer;
+    getGear__PlayerOne(data) {
+      let container = this.gearContainer;
       let output = '';
-      let counter = 0;
 
-      data.feed.forEach((feed) => {
+      output += `
+        <ul>
+          <li><a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a>${data.items.head.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.neck.id}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a>${data.items.neck.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.shoulder.id}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a>${data.items.shoulder.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.back.id}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a>${data.items.back.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.chest.id}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a>${data.items.chest.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.wrist.id}" class="q${data.items.wrist.quality} data-wowhead="ench=${data.items.wrist.tooltipParams.enchant}"></a>${data.items.wrist.itemLevel}</li>
+          
+          <br>
+          <li><a href="//www.wowhead.com/item=${data.items.hands.id}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a>${data.items.hands.itemLevel} --- </li>
+          <li><a href="//www.wowhead.com/item=${data.items.waist.id}" class="q${data.items.waist.quality}"></a>${data.items.waist.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.legs.id}" class="q${data.items.legs.quality}"></a>${data.items.legs.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.feet.id}" class="q${data.items.feet.quality}"></a>${data.items.feet.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.finger1.id}" class="q${data.items.finger1.quality}"></a>${data.items.finger1.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.finger2.id}" class="q${data.items.finger2.quality}"></a>${data.items.finger2.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.trinket1.id}" class="q${data.items.trinket1.quality}"></a>${data.items.trinket1.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.trinket2.id}" class="q${data.items.trinket2.quality}"></a>${data.items.trinket2.itemLevel}</li>
 
-        if(feed.type === "LOOT") {
-          counter++;
-          let year = new Date(feed.timestamp);
-          let month = new Date(feed.timestamp);
-          let day = new Date(feed.timestamp);
-
-          output += `
-            <h2 style="color: red">I am Loot!</h2>
-            <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-            <p>${feed.itemId}</p>
-            <p style="color: yellow">${counter}</p>
-            <hr>
-          `;
-        }
-
-        if(feed.type === "ACHIEVEMENT") {
-          counter++;
-          let year = new Date(feed.timestamp);
-          let month = new Date(feed.timestamp);
-          let day = new Date(feed.timestamp);
-
-          output += `
-            <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-            <h2>${feed.achievement.title}</h2>
-            <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-            <p>${feed.achievement.description}</p>
-            <b>Points: ${feed.achievement.points}</b>
-            <p style="color: yellow">${counter}</p>
-            <hr>
-          `;
-        }
-
-        if(feed.type === "CRITERIA") {
-          counter++;
-          let year = new Date(feed.timestamp);
-          let month = new Date(feed.timestamp);
-          let day = new Date(feed.timestamp);
-
-          output += `
-            <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-            <h2>CRITERIA: ${feed.achievement.title}</h2>
-            <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-            <p>${feed.achievement.description}</p>
-            <b>Points: ${feed.achievement.points}</b>
-            <p style="color: yellow">${counter}</p>
-            <hr>
-          `;
-        }
-      });
+          <br>
+          <li><a href="//www.wowhead.com/item=${data.items.mainHand.id}" class="q${data.items.mainHand.quality}"></a>${data.items.mainHand.itemLevel}</li>
+          <li><a href="//www.wowhead.com/item=${data.items.offHand.id}" class="q${data.items.offHand.quality}"></a>${data.items.offHand.itemLevel}</li>
+        </ul>
+      `;
 
       container.innerHTML = output;
-      counter = 0;
-      /* const itemhttp = new ItemHttp;
-      
-      data.feed.forEach((feed) => {
-        if(feed.type === "LOOT") {
-          itemhttp.get_ItemId_API(`https://eu.api.battle.net/wow/item/${feed.itemId}?locale=en_GB&apikey=cssxkvznfbce4tn3tqqw29q3ffd2n563`)
-            .then(resItem => {
-              itemBuild(resItem);
-            });
-
-            function itemBuild(resItem) {
-
-            }
-        }
-      }) */
-
+      console.log(data.items.head);
+      $WowheadPower.refreshLinks();
     }
 
 

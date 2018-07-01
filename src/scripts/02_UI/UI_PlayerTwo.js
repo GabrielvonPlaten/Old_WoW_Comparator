@@ -105,67 +105,21 @@ class UI__PlayerTwo {
       </ul>`;
   };
 
-  // Feed
-  getFeed__PlayerTwo(data) {
-    let container = this.feedContainer;
+  getGear__PlayerTwo(data) {
+    let container = this.gearContainer;
     let output = '';
-    let counter = 0;
 
-    data.feed.forEach((feed) => {
-      if(feed.type === "LOOT") {
-        counter++;
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
-        output += `
-          <h2 style="color: red">I am Loot!</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.itemId}</p>
-          <p style="color: yellow">${counter}</p>
-          <hr>
-        `;
-      }
-
-      if(feed.type === "ACHIEVEMENT") {
-        counter++;
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
-        output += `
-          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-          <h2>${feed.achievement.title}</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.achievement.description}</p>
-          <b>Points: ${feed.achievement.points}</b>
-          <p style="color: yellow">${counter}</p>
-          <hr>
-        `;
-      }
-
-      if(feed.type === "CRITERIA") {
-        counter++;
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
-        output += `
-          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-          <h2>CRITERIA: ${feed.achievement.title}</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.achievement.description}</p>
-          <b>Points: ${feed.achievement.points}</b>
-          <p style="color: yellow">${counter}</p>
-          <hr>
-        `;
-      }
-    });
+    output += `
+      <ul>
+        <li><a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality}"></a>${data.items.head.itemLevel}</li>
+      </ul>
+    `;
 
     container.innerHTML = output;
-    counter = 0;
+    console.log(data.items.head);
+    $WowheadPower.refreshLinks();
+    
   }
-
   errorMessage(msg, color) {
     let errContainer = this.errContainer;
     
