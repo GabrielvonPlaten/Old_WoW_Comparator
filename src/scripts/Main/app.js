@@ -1,6 +1,5 @@
 const API_KEY = 'cssxkvznfbce4tn3tqqw29q3ffd2n563';
 
-
 let playerOne_Form = document.querySelector('#js-playerOne_Form'),
     playerTwo_Form = document.querySelector('#js-playerTwo_Form');
 
@@ -112,5 +111,4 @@ btnProg.addEventListener('click', () => {
 btnGear.addEventListener('click', () => {
   ui_state.showGear();
 });
-
 

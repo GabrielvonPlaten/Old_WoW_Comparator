@@ -224,5 +224,64 @@
 
  */
 
-.playerOne__feed, .playerTwo__feed
-  color: $Alto
+.playerOne__gear
+  ul
+    li
+      color: $Gamboge
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      height: 43px
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: right
+      list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
+
+      a
+        margin: 0
+        float: left
+
+        span:nth-child(2)
+          margin-left: 10px
+          font-weight: 300
+
+    p
+      font-size: 1.2em
+      color: $Gamboge
+      text-align: right
+
+.playerTwo__gear
+  ul
+    li
+      color: $Gamboge
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      height: 43px
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: left
+      list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
+
+      a
+        margin: 0
+        float: right
+
+        span
+          &:nth-child(1)
+            float: right
+            margin-left: 10px
+
+          &:nth-child(2)
+            padding: 40px 0 0 0
+            font-weight: 300
+
+    p
+      font-size: 1.2em
+      color: $Gamboge
+      text-align: left
+        

@@ -25,7 +25,7 @@ class UI__PlayerTwo {
     output += `
       <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
       <br>
-      <h2>${data.name}</h2>
+      <h2>Level: ${data.level} - ${data.name}</h2>
     `;
 
     avatarContainer.innerHTML = output;
@@ -109,17 +109,40 @@ class UI__PlayerTwo {
     let container = this.gearContainer;
     let output = '';
 
-    output += `
-      <ul>
-        <li><a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality}"></a>${data.items.head.itemLevel}</li>
-      </ul>
-    `;
+  output += `
+    <li>${data.items.head.itemLevel}<a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a></li>
+    <li>${data.items.neck.itemLevel}<a href="//www.wowhead.com/item=${data.items.neck.id}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a></li>
+    <li>${data.items.shoulder.itemLevel}<a href="//www.wowhead.com/item=${data.items.shoulder.id}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a></li>
+    <li>${data.items.back.itemLevel}<a href="//www.wowhead.com/item=${data.items.back.id}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a></li>
+    <li>${data.items.chest.itemLevel}<a href="//www.wowhead.com/item=${data.items.chest.id}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a></li>
+    <li>${data.items.wrist.itemLevel}<a href="//www.wowhead.com/item=${data.items.wrist.id}" class="q${data.items.wrist.quality} data-wowhead="ench=${data.items.wrist.tooltipParams.enchant}"></a></li>
+    
+    <br>
+    <li>${data.items.hands.itemLevel}<a href="//www.wowhead.com/item=${data.items.hands.id}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a></li>
+    <li>${data.items.waist.itemLevel}<a href="//www.wowhead.com/item=${data.items.waist.id}" class="q${data.items.waist.quality}"></a></li>
+    <li>${data.items.legs.itemLevel}<a href="//www.wowhead.com/item=${data.items.legs.id}" class="q${data.items.legs.quality}"></a></li>
+    <li>${data.items.feet.itemLevel}<a href="//www.wowhead.com/item=${data.items.feet.id}" class="q${data.items.feet.quality}"></a></li>
+    <li>${data.items.finger1.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger1.id}" class="q${data.items.finger1.quality}"></a></li>
+    <li>${data.items.finger2.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger2.id}" class="q${data.items.finger2.quality}"></a></li>
+    <li>${data.items.trinket1.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket1.id}" class="q${data.items.trinket1.quality}"></a></li>
+    <li>${data.items.trinket2.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket2.id}" class="q${data.items.trinket2.quality}"></a></li>
 
-    container.innerHTML = output;
-    console.log(data.items.head);
-    $WowheadPower.refreshLinks();
+    <br>
+    <li>${data.items.mainHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.mainHand.id}" class="q${data.items.mainHand.quality}"></a></li>
+    <li>${data.items.offHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.offHand.id}" class="q${data.items.offHand.quality}"></a></li>
+  `;
+
+  container.innerHTML = `
+    <ul>
+      <p>iLvl: ${data.items.averageItemLevelEquipped}</p>
+      ${output}
+    </ul>
+  `;
+  $WowheadPower.refreshLinks();
     
   }
+
+  // Error Message
   errorMessage(msg, color) {
     let errContainer = this.errContainer;
     
