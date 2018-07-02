@@ -12,6 +12,7 @@ class UI__PlayerOne {
     this.errContainer = document.querySelector('#UI-error__playerOne');
     
     this.spinner = document.querySelector('#UI-spinner__PlayerOne');
+
   }
 
   loading() {
@@ -77,26 +78,71 @@ class UI__PlayerOne {
     `;
 
     statsContainer.innerHTML = output;
-  };
+    };
 
-  getMounts__PlayerOne(data) {
-    let container = this.mountsContainer;
+    getMounts__PlayerOne(data) {
+      let container = this.mountsContainer;
+      let output = '';
+
+      data.mounts.collected.forEach((mount) => {
+        if(mount.qualityId === 4) {
+          output += `
+          <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        } else if(mount.qualityId === 3) {
+          output += `
+          <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        } else if(mount.qualityId === 1) {
+          output += `
+          <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          `;
+        };
+      });
+
+      container.innerHTML = `
+        <ul>
+          <p>Collected: ${data.mounts.numCollected}</p>
+          ${output}
+        </ul>`;
+    };
+
+  // Feed
+  getFeed__PlayerOne(data) {
+    let container = this.feedContainer;
     let output = '';
 
-    data.mounts.collected.forEach((mount) => {
-      if(mount.qualityId === 4) {
+  
+    data.feed.forEach((feed) => {
+
+      if(feed.type === "LOOT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+
+        // Output
         output += `
-        <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          <li class="feed-result__playerOne">
+            <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
         `;
-      } else if(mount.qualityId === 3) {
+        console.log(`<a href="//www.wowhead.com/item=${feed.itemId}" data-wowhead="item=${feed.itemId}">hai</a>`)
+      }
+
+      if(feed.type === "ACHIEVEMENT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
         output += `
-        <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+          <li class="feed-result__playerOne">
+          <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
         `;
-      } else if(mount.qualityId === 1) {
-        output += `
-        <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-        `;
-      };
+      }
     });
 
     container.innerHTML = `
