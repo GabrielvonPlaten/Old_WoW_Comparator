@@ -224,9 +224,62 @@
 
  */
 
-.playerOne__feed, .playerTwo__feed
-  color: $Alto
+.playerOne__feed
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      float: right
+      width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
 
+      span
+        
+        &:nth-child(1)
+          float: right
+        &:nth-child(2)
+          margin: 10px 10px 0 0
+          float: right
+
+    .date
+      font-size: 14px
+      color: $Bright_Turquoise
+      margin-right: 10px
+
+.playerTwo__feed
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      float: left
+      width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
+
+      span
+        
+        &:nth-child(1)
+          float: left
+        &:nth-child(2)
+          margin: 10px 0 0 10px
+          float: left
+
+    .date
+      font-size: 14px
+      color: $Bright_Turquoise
+      margin-right: 10px
+      float: right
 
 
 

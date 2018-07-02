@@ -10,6 +10,7 @@ class UI__PlayerTwo {
     this.errContainer = document.querySelector('#UI-error__playerTwo');
 
     this.spinner = document.querySelector('#UI-spinner__PlayerTwo');
+
   }
   loading() {
     let spinner = this.spinner;
@@ -109,61 +110,45 @@ class UI__PlayerTwo {
   getFeed__PlayerTwo(data) {
     let container = this.feedContainer;
     let output = '';
-    let counter = 0;
 
     data.feed.forEach((feed) => {
+
       if(feed.type === "LOOT") {
-        counter++;
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
         let day = new Date(feed.timestamp);
 
+
+        // Output
         output += `
-          <h2 style="color: red">I am Loot!</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.itemId}</p>
-          <p style="color: yellow">${counter}</p>
-          <hr>
+          <li class="feed-result__playerTwo">
+            <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
         `;
+        console.log(`<a href="//www.wowhead.com/item=${feed.itemId}" data-wowhead="item=${feed.itemId}">hai</a>`)
       }
 
       if(feed.type === "ACHIEVEMENT") {
-        counter++;
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
         let day = new Date(feed.timestamp);
 
         output += `
-          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-          <h2>${feed.achievement.title}</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.achievement.description}</p>
-          <b>Points: ${feed.achievement.points}</b>
-          <p style="color: yellow">${counter}</p>
-          <hr>
-        `;
-      }
-
-      if(feed.type === "CRITERIA") {
-        counter++;
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
-        output += `
-          <img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg">
-          <h2>CRITERIA: ${feed.achievement.title}</h2>
-          <p>${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
-          <p>${feed.achievement.description}</p>
-          <b>Points: ${feed.achievement.points}</b>
-          <p style="color: yellow">${counter}</p>
-          <hr>
+          <li class="feed-result__playerTwo">
+          <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
         `;
       }
     });
 
-    container.innerHTML = output;
-    counter = 0;
+    container.innerHTML = `
+      <ul>
+        ${output}
+      </ul>
+    `;
+    $WowheadPower.refreshLinks();
   }
 
   errorMessage(msg, color) {
