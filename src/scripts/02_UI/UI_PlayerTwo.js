@@ -10,6 +10,7 @@ class UI__PlayerTwo {
     this.errContainer = document.querySelector('#UI-error__playerTwo');
 
     this.spinner = document.querySelector('#UI-spinner__PlayerTwo');
+
   }
   loading() {
     let spinner = this.spinner;
@@ -19,7 +20,6 @@ class UI__PlayerTwo {
 
   avatar__PlayerTwo(data) {
     let spinner = this.spinner;
-    let errContainer = this.errContainer;
     let avatarContainer = this.avatarImage;
     let output = '';
 
@@ -79,32 +79,77 @@ class UI__PlayerTwo {
     
     };
 
-    getMounts__PlayerTwo(data) {
-      let container = this.mountsContainer;
-      let output = '';
+  getMounts__PlayerTwo(data) {
+    let container = this.mountsContainer;
+    let output = '';
 
-      data.mounts.collected.forEach((mount) => {
-        if(mount.qualityId === 4) {
-          output += `
-          <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        } else if(mount.qualityId === 3) {
-          output += `
-          <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        } else if(mount.qualityId === 1) {
-          output += `
-          <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
-          `;
-        };
-      });
+    data.mounts.collected.forEach((mount) => {
+      if(mount.qualityId === 4) {
+        output += `
+        <li><div class="mounts--epic"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      } else if(mount.qualityId === 3) {
+        output += `
+        <li><div class="mounts--rare"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      } else if(mount.qualityId === 1) {
+        output += `
+        <li><div class="mounts--common"></div><span>${mount.name}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${mount.icon}.jpg"></li>
+        `;
+      };
+    });
 
-      container.innerHTML = `
-        <ul>
-          <p>Collected: ${data.mounts.numCollected}</p>
-          ${output}
-        </ul>`;
+    container.innerHTML = `
+      <ul>
+        <p>Collected: ${data.mounts.numCollected}</p>
+        ${output}
+      </ul>`;
   };
+
+  // Feed
+  getFeed__PlayerTwo(data) {
+    let container = this.feedContainer;
+    let output = '';
+
+    data.feed.forEach((feed) => {
+
+      if(feed.type === "LOOT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+
+        // Output
+        output += `
+          <li class="feed-result__playerTwo">
+            <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
+        `;
+        console.log(`<a href="//www.wowhead.com/item=${feed.itemId}" data-wowhead="item=${feed.itemId}">hai</a>`)
+      }
+
+      if(feed.type === "ACHIEVEMENT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+        output += `
+          <li class="feed-result__playerTwo">
+          <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
+        `;
+      }
+    });
+
+    container.innerHTML = `
+      <ul>
+        ${output}
+      </ul>
+    `;
+    $WowheadPower.refreshLinks();
+  }
 
   errorMessage(msg, color) {
     let errContainer = this.errContainer;

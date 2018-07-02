@@ -12,6 +12,7 @@ class UI__PlayerOne {
     this.errContainer = document.querySelector('#UI-error__playerOne');
     
     this.spinner = document.querySelector('#UI-spinner__PlayerOne');
+
   }
 
   loading() {
@@ -105,6 +106,52 @@ class UI__PlayerOne {
           ${output}
         </ul>`;
     };
+
+  // Feed
+  getFeed__PlayerOne(data) {
+    let container = this.feedContainer;
+    let output = '';
+
+  
+    data.feed.forEach((feed) => {
+
+      if(feed.type === "LOOT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+
+        // Output
+        output += `
+          <li class="feed-result__playerOne">
+            <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
+        `;
+        console.log(`<a href="//www.wowhead.com/item=${feed.itemId}" data-wowhead="item=${feed.itemId}">hai</a>`)
+      }
+
+      if(feed.type === "ACHIEVEMENT") {
+        let year = new Date(feed.timestamp);
+        let month = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);
+
+        output += `
+          <li class="feed-result__playerOne">
+          <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
+            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+          </li>
+        `;
+      }
+    });
+
+    container.innerHTML = `
+      <ul>
+        ${output}
+      </ul>
+    `;
+    $WowheadPower.refreshLinks();
+  }
 
 
     errorMessage(msg, color) {
