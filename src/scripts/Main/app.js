@@ -37,6 +37,13 @@ playerOne_Form.addEventListener('submit', (e) => {
           ui_P_One.getMounts__PlayerOne(data);
         });
 
+      // Feed
+      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
+      .then(data => {
+        console.log(data)
+        ui_P_One.getFeed__PlayerOne(data);
+      })
+
       // Gear
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
@@ -77,12 +84,19 @@ playerTwo_Form.addEventListener('submit', (e) => {
           ui_P_Two.getMounts__PlayerTwo(data);
         });
 
+        // Feed
+        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_Two.getFeed__PlayerTwo(data);
+        })
+
         // Gear
-      http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
-      .then(data => {
-        console.log(data)
-        ui_P_Two.getGear__PlayerTwo(data);
-      })
+        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_Two.getGear__PlayerTwo(data);
+        })
       }
 });
 
@@ -91,10 +105,15 @@ playerTwo_Form.addEventListener('submit', (e) => {
 const ui_state = new UI_State;
 
 // States Buttons
-let btnMounts = document.querySelector('#js-mounts'),
+let btnFeed   = document.querySelector('#js-feed'),
+    btnMounts = document.querySelector('#js-mounts'),
     btnStats  = document.querySelector('#js-stats'),
     btnProg   = document.querySelector('#js-prog'),
     btnGear   = document.querySelector('#js-gear');
+
+btnFeed.addEventListener('click', () => {
+  ui_state.showFeed();
+})
 
 btnMounts.addEventListener('click', () => {
   ui_state.showMounts();
