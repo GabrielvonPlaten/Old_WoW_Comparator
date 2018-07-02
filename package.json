@@ -1,7 +1,7 @@
 {
   "name": "WoW_Comparator",
   "version": "1.0.0",
-  "description": "",
+  "description": "WoW_Comparator compares two EU characters from the massive multipleyer video game World of Warcraft.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,9 @@
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^3.2.1",
     "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-file-include": "^2.0.1",
+    "gulp-minify-html": "^1.0.6"
   }
 }

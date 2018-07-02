@@ -1,0 +1,63 @@
+@@include('./_partials/_header.html')
+<div class="comparator">
+  <div class="player">
+    <form class="form form__playerOne" id="js-playerOne_Form">
+      <h3>Player One</h3>
+      <input type="text" placeholder="Realm" id="js-playerOne_Realm">
+      <br>
+      <input type="text" placeholder="Name" id="js-playerOne_Name">
+      <button class="btn btn--blue btn--mb">Search</button>
+    </form>
+    
+
+    <div class="line line--vertical line--short line--margin line__form"></div>
+
+    <form class="form form__playerTwo" id="js-playerTwo_Form">
+        <h3>Player Two</h3>
+        <input type="text" placeholder="Realm" id="js-playerTwo_Realm">
+        <br>
+        <input type="text" placeholder="Name" id="js-playerTwo_Name">
+        <button class="btn btn--blue btn--mb">Search</button>
+    </form>
+  </div>
+  <div class="buttonContainer">
+    <button class="btn btn--purple" id="js-feed" value="off">Feed</button>
+    <button class="btn btn--purple" id="js-mounts" value="off">Mounts</button>
+    <button class="btn btn--purple" id="js-stats" value="on">Stats</button>
+    <button class="btn btn--purple" id="js-prog" value="off">Progress</button>
+    <button class="btn btn--purple" id="js-gear" value="off">Gear</button>
+  </div>
+
+  <!-- <div class="line line--vertical line--short line--margin line__divide"></div> -->
+
+  <div class="separation">
+    <div class="separation__playerOne">
+      <div class="spinner" id="UI-spinner__PlayerOne">
+        <img src="images/Eclipse-1s-93px.gif">
+      </div>
+      <div class="avatar" id="UI-error__playerOne"></div>
+      <div class="avatar" id="UI-avatar__playerOne"></div>
+      <div class="ui__playerOne playerOne__baseStats" id="UI-mainStats__playerOne"></div>
+      <div class="ui__playerOne playerOne__mounts" id="UI-mounts__playerOne">
+      </div>
+      <div class="ui__playerOne playerOne__gear" id="UI-gear__playerOne"></div>
+      <div class="ui__playerOne playerOne__feed" id="UI-feed__playerOne"></div>
+      <div class="ui__playerOne playerOne__progress" id="UI-progess__playerOne"></div>
+    </div>
+    <div class="separation__playerTwo">
+      <div class="spinner" id="UI-spinner__PlayerTwo">
+        <img src="images/Eclipse-1s-93px.gif">
+      </div>
+      <div class="avatar" id="UI-error__playerTwo"></div>
+      <div class="avatar" id="UI-avatar__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__baseStats" id="UI-mainStats__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__mounts" id="UI-mounts__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__gear" id="UI-gear__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__feed" id="UI-feed__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__progess" id="UI-progess__playerTwo"></div>
+    </div>
+  </div>
+
+</div>
+
+@@include('./_partials/_footer.html')

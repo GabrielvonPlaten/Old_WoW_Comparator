@@ -1,0 +1,355 @@
+.comparator
+  height: auto
+  
+  .player
+    margin: 0 auto
+    width: 80%
+    height: 120px
+    border-radius: 5px
+    background-color: $Port_Gore
+
+.form
+  padding: 7px 0 0 0
+
+  h3
+    margin: 0
+    padding: 0
+    color: $Alto
+    font-weight: 300
+
+  input
+    background-color: $Mirage
+    color: $Alto
+    border: none
+    font-size: 19px
+    font-style: Italic
+    font-weight: 300
+    margin-top: 7px
+    padding: 3px
+
+  &__playerOne
+    float: left
+    margin-left: 20px
+
+  &__playerTwo
+    float: right
+    margin-right: 20px
+
+// Line Form
+.line__form
+  position: relative
+  top: 58
+  width: 100px
+
+.line__divide
+  position: relative
+  top: 325
+  width: 800px
+
+.buttonContainer
+  padding: 20px 0
+  text-align: center
+
+// Comparator Global
+.playerOne__mounts, .playerOne__gear, .playerOne__feed, .playerOne__progress
+  display: none
+
+.playerTwo__mounts, .playerTwo__gear, .playerTwo__feed, .playerTwo__progess
+  display: none
+
+.separation
+  display: grid
+  grid-template-columns: 1fr 1fr
+
+  .separation__playerOne
+
+    .ui__playerOne
+      height: 100%
+      width: 90%
+      margin: 0 auto
+
+  .separation__playerTwo
+  
+    .ui__playerTwo
+      height: 100%
+      width: 90%
+      margin: 0 auto
+
+.spinner
+  display: none
+  text-align: center
+
+// AVATAR
+.avatar
+  text-align: center
+  padding: 0
+  margin: 0 auto 5em auto
+
+  h2
+    color: $Alto
+    font-weight: 300
+
+/* 
+
+  MAIN STATS  
+  
+ */
+.baseStat
+  color: $Alto
+  font-weight: 300
+  font-size: 18px
+  font-style: italic
+
+.playerOne__baseStats
+  ul
+    li
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      margin-top: 10px
+      font-size: 1.2em
+      &:hover
+        background-color: $Port_Gore-Light
+
+      .statNumber
+        float: right
+        color: $Bright_Turquoise
+
+.playerTwo__baseStats
+  ul
+    li
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: right
+      list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
+
+      .statNumber
+        float: left
+        color: $Bright_Turquoise
+
+/* 
+  
+  MOUNTS 
+    
+  */
+.mounts--epic
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $Seance
+  margin-top: 2px
+
+.mounts--rare
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: blue
+  margin-top: 2px
+
+.mounts--common
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $Alto
+  margin-top: 2px
+
+.playerOne__mounts
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: right
+      float: right
+      width: 65%
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: right
+        margin-left: 1em
+
+      .mounts--epic, .mounts--rare, .mounts--common
+        float: left
+
+    p
+      text-align: right
+      color: $Alto
+
+.playerTwo__mounts
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: left
+      float: left
+      width: 65%
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: left
+        margin-right: 1em
+
+      .mounts--epic, .mounts--rare, .mounts--common
+        float: right
+
+    p
+      text-align: left
+      color: $Alto
+
+/* 
+  
+  FEED
+
+ */
+
+.playerOne__feed
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      float: right
+      width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
+
+      span
+        
+        &:nth-child(1)
+          float: right
+        &:nth-child(2)
+          margin: 10px 10px 0 0
+          float: right
+
+    .date
+      font-size: 14px
+      color: $Bright_Turquoise
+      margin-right: 10px
+
+.playerTwo__feed
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      float: left
+      width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
+
+      span
+        
+        &:nth-child(1)
+          float: left
+        &:nth-child(2)
+          margin: 10px 0 0 10px
+          float: left
+
+    .date
+      font-size: 14px
+      color: $Bright_Turquoise
+      margin-right: 10px
+      float: right
+
+    p
+      font-size: 1.2em
+      color: $Gamboge
+      text-align: right
+
+/* 
+  
+  GEAR 
+    
+  */
+
+.playerOne__gear
+  ul
+    li
+      color: $Gamboge
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      height: 43px
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: right
+      list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
+
+      a
+        margin: 0
+        float: left
+
+        span:nth-child(2)
+          margin-left: 10px
+          font-weight: 300
+
+    p
+      font-size: 1.2em
+      color: $Gamboge
+      text-align: right
+
+.playerTwo__gear
+  ul
+    li
+      color: $Gamboge
+      background-color: $Port_Gore
+      padding: 10px
+      width: 100%
+      height: 43px
+      margin-top: 10px
+      font-size: 1.2em
+      text-align: left
+      list-style-position: inside
+      &:hover
+        background-color: $Port_Gore-Light
+
+      a
+        margin: 0
+        float: right
+
+        span
+          &:nth-child(1)
+            float: right
+            margin-left: 10px
+
+          &:nth-child(2)
+            padding: 40px 0 0 0
+            font-weight: 300
+
+    p
+      font-size: 1.2em
+      color: $Gamboge
+      text-align: left
+        

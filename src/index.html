@@ -1,13 +1,33 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/main.min.css">
-</head>
-<body>
-  
-  <script src="scripts/main.min.js"></script>
-</body>
-</html>
+@@include('./_partials/_header.html')
+
+  <div class="jumbotron">
+      <div class="jumbotron__container">
+        <h1>WoW Comparator</h1>
+        <p>Compare your World of Warcraft character’s stats, achievements, mounts, and progress with other’s peoples characters!</p>
+    
+        <br>
+        <a href="comparator.html" class="btn btn--purple">Start Comparing!</a>
+      </div>
+    </div>
+    
+    <div class="line line--vertical line--short line--margin"></div>
+    
+    <div class="boxContainer">
+      <div class="boxContainer__box">
+        <h2>API</h2>
+        <p>Using Blizzard’s API, you can fetch the data available of any character by searching for its name and realm.</p>
+      </div>
+      <div class="boxContainer__box">
+        <h2>DATA</h2>
+        <p>Stats, Progress, Loot, Mounts. Receive the same data you have in-game here!</p>
+      </div>
+      <div class="boxContainer__box">
+        <h2>COMPARE</h2>
+        <p>Compare your character’s data with another character! See how far -- or behind -- you are with your friends!</p>
+      </div>
+    </div>
+
+    <div class="line line--vertical line--short line--margin"></div>
+
+  <!-- Footer -->
+  @@include('./_partials/_footer.html')

@@ -1,0 +1,61 @@
+.jumbotron
+  padding: 1px 0
+  height: 650px
+
+  background: url('..//images/world_of_warcraft_wrath_of_the_lich_king-1920x1080.jpg')
+  background-repeat: no-repeat
+  background-color: $Mirage
+  background-blend-mode: soft-light
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+  &__container
+    width: 25%
+    margin: 9% auto 0 auto
+    text-align: center
+    color: $Alto
+
+    h1
+      font-weight: normal
+      font-size: 38px
+
+    p
+      font-weight: 200
+      font-style: italic
+      font-size: 22px
+      margin-bottom: 20px
+
+// Lines
+.line
+  +line
+  margin: 70px auto 0 auto
+
+  &--vertical
+    +line--vertical(rotate(90deg))
+
+  &--short
+    width: 100px
+
+.boxContainer
+  margin-top: 70px
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+
+  &__box
+    font-size: 18px
+    margin: 0 auto
+    padding: 15 30px
+    width: 55%
+    height: 200px
+    text-align: center
+    background-color: $Port_Gore
+    color: $Alto
+    box-shadow: 0px 4px 4px rgba(37, 45, 86, 0.25)
+    border-radius: 5px
+
+    p
+      letter-spacing: 1px
+      font-weight: 200
+      width: 80%
+      margin: 20px auto
+
+    
