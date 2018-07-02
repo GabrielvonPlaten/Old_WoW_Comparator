@@ -26,7 +26,7 @@ class UI__PlayerTwo {
     output += `
       <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
       <br>
-      <h2>${data.name}</h2>
+      <h2>Level: ${data.level} - ${data.name}</h2>
     `;
 
     avatarContainer.innerHTML = output;
@@ -111,6 +111,7 @@ class UI__PlayerTwo {
     let container = this.feedContainer;
     let output = '';
 
+  
     data.feed.forEach((feed) => {
 
       if(feed.type === "LOOT") {
@@ -126,7 +127,6 @@ class UI__PlayerTwo {
             <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
           </li>
         `;
-        console.log(`<a href="//www.wowhead.com/item=${feed.itemId}" data-wowhead="item=${feed.itemId}">hai</a>`)
       }
 
       if(feed.type === "ACHIEVEMENT") {
@@ -148,9 +148,47 @@ class UI__PlayerTwo {
         ${output}
       </ul>
     `;
-    $WowheadPower.refreshLinks();
+    this.refreshLinks();
   }
 
+  getGear__PlayerTwo(data) {
+    let container = this.gearContainer;
+    let output = '';
+
+    output += `
+      <li>${data.items.head.itemLevel}: Head<a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a></li>
+      <li>${data.items.neck.itemLevel}: Neck<a href="//www.wowhead.com/item=${data.items.neck.id}" class="q${data.items.neck.quality}"></a></li>
+      <li>${data.items.shoulder.itemLevel}: Shoulder<a href="//www.wowhead.com/item=${data.items.shoulder.id}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a></li>
+      <li>${data.items.back.itemLevel}: Back<a href="//www.wowhead.com/item=${data.items.back.id}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a></li>
+      <li>${data.items.chest.itemLevel}: Chest<a href="//www.wowhead.com/item=${data.items.chest.id}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a></li>
+      <li>${data.items.wrist.itemLevel}: Wrist<a href="//www.wowhead.com/item=${data.items.wrist.id}" class="q${data.items.wrist.quality} data-wowhead="ench=${data.items.wrist.tooltipParams.enchant}"></a></li>
+      
+      <br>
+      <li>${data.items.hands.itemLevel}: Hands<a href="//www.wowhead.com/item=${data.items.hands.id}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a></li>
+      <li>${data.items.waist.itemLevel}: Waist<a href="//www.wowhead.com/item=${data.items.waist.id}" class="q${data.items.waist.quality}"></a></li>
+      <li>${data.items.legs.itemLevel}: Legs<a href="//www.wowhead.com/item=${data.items.legs.id}" class="q${data.items.legs.quality}"></a></li>
+      <li>${data.items.feet.itemLevel}: Feet<a href="//www.wowhead.com/item=${data.items.feet.id}" class="q${data.items.feet.quality}"></a></li>
+      <li>${data.items.finger1.itemLevel}: Ring<a href="//www.wowhead.com/item=${data.items.finger1.id}" class="q${data.items.finger1.quality}"></a></li>
+      <li>${data.items.finger2.itemLevel}: Ring<a href="//www.wowhead.com/item=${data.items.finger2.id}" class="q${data.items.finger2.quality}"></a></li>
+      <li>${data.items.trinket1.itemLevel}: Trinket<a href="//www.wowhead.com/item=${data.items.trinket1.id}" class="q${data.items.trinket1.quality}"></a></li>
+      <li>${data.items.trinket2.itemLevel}: Trinket<a href="//www.wowhead.com/item=${data.items.trinket2.id}" class="q${data.items.trinket2.quality}"></a></li>
+
+      <br>
+      <li>${data.items.mainHand.itemLevel}: Main-Hand<a href="//www.wowhead.com/item=${data.items.mainHand.id}" class="q${data.items.mainHand.quality}"></a></li>
+      <li>${data.items.offHand.itemLevel}: Off-Hand<a href="//www.wowhead.com/item=${data.items.offHand.id}" class="q${data.items.offHand.quality}"></a></li>
+    `;
+
+    container.innerHTML = `
+      <ul>
+        <p>iLvl: ${data.items.averageItemLevelEquipped}</p>
+        ${output}
+      </ul>
+    `;
+    this.refreshLinks();
+    
+  }
+
+  // Error Message
   errorMessage(msg, color) {
     let errContainer = this.errContainer;
     
@@ -167,5 +205,9 @@ class UI__PlayerTwo {
 
     errContainer.textContent = '';
     errContainer.style.display = 'none';
+  }
+
+  refreshLinks() {
+    $WowheadPower.refreshLinks();
   }
 }
