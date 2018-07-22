@@ -340,7 +340,7 @@ class UI__PlayerOne {
         <li class="playerOne__progression__box">
           <h2 class="raid-name">${raid.name}</h2>
           <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
-      `;
+      `;/* 
       raid.bosses.forEach((boss) => {
         if(!boss.lfrKills) {
           output += `
@@ -363,7 +363,7 @@ class UI__PlayerOne {
               <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills} | Mythic ${boss.mythicKills}</h4>
           `;
         }
-      });
+      }); */
       
       output += '</li>';
     });
