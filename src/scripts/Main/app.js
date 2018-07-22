@@ -49,7 +49,14 @@ playerOne_Form.addEventListener('submit', (e) => {
         .then(data => {
           console.log(data)
           ui_P_One.getGear__PlayerOne(data);
-        })
+        });
+
+      // Pets
+      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_One.getPets__PlayerOne(data);
+        });
   }
 });
 
@@ -96,7 +103,14 @@ playerTwo_Form.addEventListener('submit', (e) => {
         .then(data => {
           console.log(data)
           ui_P_Two.getGear__PlayerTwo(data);
-        })
+        });
+
+        // Pets
+        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_Two.getPets__PlayerTwo(data);
+        });
       }
 });
 
@@ -109,7 +123,8 @@ let btnFeed   = document.querySelector('#js-feed'),
     btnMounts = document.querySelector('#js-mounts'),
     btnStats  = document.querySelector('#js-stats'),
     btnProg   = document.querySelector('#js-prog'),
-    btnGear   = document.querySelector('#js-gear');
+    btnGear   = document.querySelector('#js-gear'),
+    btnPets   = document.querySelector('#js-pets');
 
 btnFeed.addEventListener('click', () => {
   ui_state.showFeed();
@@ -129,5 +144,9 @@ btnProg.addEventListener('click', () => {
 
 btnGear.addEventListener('click', () => {
   ui_state.showGear();
+});
+
+btnPets.addEventListener('click', () => {
+  ui_state.showPets();
 });
 
