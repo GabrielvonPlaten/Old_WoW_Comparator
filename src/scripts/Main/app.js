@@ -94,21 +94,18 @@ playerTwo_Form.addEventListener('submit', (e) => {
         // Feed
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_Two.getFeed__PlayerTwo(data);
         })
 
         // Gear
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_Two.getGear__PlayerTwo(data);
         });
 
         // Pets
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_Two.getPets__PlayerTwo(data);
         });
       }
