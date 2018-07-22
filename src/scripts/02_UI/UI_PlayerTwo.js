@@ -24,11 +24,17 @@ class UI__PlayerTwo {
     let avatarContainer = this.avatarImage;
     let output = '';
 
-    output += `
-      <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
-      <br>
-      <h2>Level: ${data.level} - ${data.name}</h2>
-    `;
+    if(data.thumbnail.status === 404) {
+      output += `
+        <img src="https://us.battle.net/wow/static/images/2d/avatar/2-0.jpg">
+        <br>
+        <h2>Level: ${data.level} - ${data.name}</h2>`;
+    } else {
+      output += `
+        <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
+        <br>
+        <h2>Level: ${data.level} - ${data.name}</h2>`;
+    }
 
     avatarContainer.innerHTML = output;
     spinner.style.display = 'none';
@@ -329,6 +335,49 @@ class UI__PlayerTwo {
       </ul>`;
   }
 
+  getProg__PlayerTwo(data) {
+    let progContainer = this.progContainer;
+    let output = '';
+
+    data.progression.raids.forEach((raid) => {
+      output += `
+        <li class="playerTwo__progression__box">
+          <h2 class="raid-name">${raid.name}</h2>
+          <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
+      `;
+      raid.bosses.forEach((boss) => {
+        if(!boss.lfrKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
+        `; 
+        } else if(!boss.heroicKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>Normal: ${boss.normalKills}</h4>
+          `;
+        } else if(!boss.mythicKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
+          `;
+        } else {
+          output += `
+              <h2 class="boss-name">${boss.name}</h2>
+              <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills} | Mythic ${boss.mythicKills}</h4>
+          `;
+        }
+      });
+      
+      output += '</li>';
+    });
+
+    progContainer.innerHTML = `
+      <ul>
+        ${output}
+      </ul>
+    `;
+  };
   // Error Message
   errorMessage(msg, color) {
     let errContainer = this.errContainer;

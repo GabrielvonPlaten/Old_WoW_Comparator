@@ -20,6 +20,7 @@ playerOne_Form.addEventListener('submit', (e) => {
 
   } else {
     ui_P_One.loading();
+    // Avatar & Stats
     http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
       .then(data => {
         console.log(data)
@@ -57,6 +58,13 @@ playerOne_Form.addEventListener('submit', (e) => {
           console.log(data)
           ui_P_One.getPets__PlayerOne(data);
         });
+
+      // Progression
+      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_One.getProg__PlayerOne(data);
+      });
   }
 });
 
@@ -76,6 +84,7 @@ playerTwo_Form.addEventListener('submit', (e) => {
 
       } else {
         ui_P_Two.loading();
+        // Avatar & Stats
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
           ui_P_Two.avatar__PlayerTwo(data)
@@ -107,6 +116,13 @@ playerTwo_Form.addEventListener('submit', (e) => {
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
           ui_P_Two.getPets__PlayerTwo(data);
+        });
+
+        // Progression
+        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
+        .then(data => {
+          console.log(data)
+          ui_P_Two.getProg__PlayerTwo(data);
         });
       }
 });
