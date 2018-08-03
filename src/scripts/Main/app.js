@@ -23,7 +23,6 @@ playerOne_Form.addEventListener('submit', (e) => {
     // Avatar & Stats
     http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
       .then(data => {
-        console.log(data)
         ui_P_One.avatar__PlayerOne(data)
         ui_P_One.baseStats__PlayerOne(data)
       })
@@ -34,35 +33,30 @@ playerOne_Form.addEventListener('submit', (e) => {
       // Mounts
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=mounts&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_One.getMounts__PlayerOne(data);
         });
 
       // Feed
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
       .then(data => {
-        console.log(data)
         ui_P_One.getFeed__PlayerOne(data);
       })
 
       // Gear
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_One.getGear__PlayerOne(data);
         });
 
       // Pets
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_One.getPets__PlayerOne(data);
         });
 
       // Progression
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_One.getProg__PlayerOne(data);
       });
   }
@@ -121,7 +115,6 @@ playerTwo_Form.addEventListener('submit', (e) => {
         // Progression
         http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
         .then(data => {
-          console.log(data)
           ui_P_Two.getProg__PlayerTwo(data);
         });
       }

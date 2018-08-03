@@ -19,6 +19,7 @@ class UI__PlayerTwo {
     spinner.style.display = 'block';
   }
 
+  // Avatar
   avatar__PlayerTwo(data) {
     let spinner = this.spinner;
     let avatarContainer = this.avatarImage;
@@ -41,8 +42,7 @@ class UI__PlayerTwo {
     this.clearErr();
   }
 
-  
-
+  // Base stats
   baseStats__PlayerTwo(data) {
     let statsContainer = this.statsContainer;
     let output = '';
@@ -86,6 +86,7 @@ class UI__PlayerTwo {
     
     };
 
+  // Mounts
   getMounts__PlayerTwo(data) {
     let container = this.mountsContainer;
     let output = '';
@@ -158,6 +159,7 @@ class UI__PlayerTwo {
     this.refreshLinks();
   }
 
+  // Gear
   getGear__PlayerTwo(data) {
     let container = this.gearContainer;
     let output = '';
@@ -290,6 +292,7 @@ class UI__PlayerTwo {
     
   }
 
+  // Pets
   getPets__PlayerTwo(data) {
     let container = this.petsContainer;
     let output = '';
@@ -335,6 +338,7 @@ class UI__PlayerTwo {
       </ul>`;
   }
 
+  // Progression
   getProg__PlayerTwo(data) {
     let progContainer = this.progContainer;
     let output = '';
@@ -378,6 +382,7 @@ class UI__PlayerTwo {
       </ul>
     `;
   };
+
   // Error Message
   errorMessage(msg, color) {
     let errContainer = this.errContainer;

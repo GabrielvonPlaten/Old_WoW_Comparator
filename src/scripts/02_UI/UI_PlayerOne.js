@@ -22,6 +22,7 @@ class UI__PlayerOne {
     spinner.style.display = 'block';
   }
 
+  // Avatar
   avatar__PlayerOne(data) {
     let spinner = this.spinner;
     let avatarContainer = this.avatarImage;
@@ -40,6 +41,7 @@ class UI__PlayerOne {
     this.clearErr();
   }
 
+  // Base Stats
   baseStats__PlayerOne(data) {
     let statsContainer = this.statsContainer;
     let output = '';
@@ -82,6 +84,7 @@ class UI__PlayerOne {
     statsContainer.innerHTML = output;
     };
 
+  // Mounts
   getMounts__PlayerOne(data) {
     let container = this.mountsContainer;
     let output = '';
@@ -120,8 +123,7 @@ class UI__PlayerOne {
       if(feed.type === "LOOT") {
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
+        let day = new Date(feed.timestamp);        
 
         // Output
         output += `
@@ -135,7 +137,7 @@ class UI__PlayerOne {
       if(feed.type === "ACHIEVEMENT") {
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);        
 
         output += `
           <li class="feed-result__playerOne">
@@ -154,6 +156,7 @@ class UI__PlayerOne {
       this.refreshLinks();
   };
 
+  // Gear
   getGear__PlayerOne(data) {
     let container = this.gearContainer;
     let output = '';
@@ -286,6 +289,7 @@ class UI__PlayerOne {
     this.refreshLinks();
   }
 
+  // Pets
   getPets__PlayerOne(data) {
     let container = this.petsContainer;
     let output = '';
@@ -331,6 +335,7 @@ class UI__PlayerOne {
       </ul>`;
   }
 
+  // Progression
   getProg__PlayerOne(data) {
     let progContainer = this.progContainer;
     let output = '';
