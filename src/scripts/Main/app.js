@@ -25,6 +25,7 @@ playerOne_Form.addEventListener('submit', (e) => {
       .then(data => {
         ui_P_One.avatar__PlayerOne(data)
         ui_P_One.baseStats__PlayerOne(data)
+        console.log(data);
       })
       .catch(() => {
         ui_P_One.errorMessage('Wrong input or player not found.', 'red');
@@ -83,6 +84,7 @@ playerTwo_Form.addEventListener('submit', (e) => {
         .then(data => {
           ui_P_Two.avatar__PlayerTwo(data)
           ui_P_Two.baseStats__PlayerTwo(data);
+          console.log(data)
         })
         .catch(() => {
           ui_P_Two.errorMessage('Wrong input or player not found.', 'red');
