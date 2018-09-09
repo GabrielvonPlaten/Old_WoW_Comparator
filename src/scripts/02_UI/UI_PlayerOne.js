@@ -8,6 +8,7 @@ class UI__PlayerOne {
     this.gearContainer = document.querySelector('#UI-gear__playerOne');
     this.feedContainer = document.querySelector('#UI-feed__playerOne');
     this.progContainer = document.querySelector('#UI-progress__playerOne');
+    this.petsContainer = document.querySelector('#UI-pets__playerOne');
     
     this.errContainer = document.querySelector('#UI-error__playerOne');
     
@@ -21,23 +22,37 @@ class UI__PlayerOne {
     spinner.style.display = 'block';
   }
 
+  // Avatar
   avatar__PlayerOne(data) {
     let spinner = this.spinner;
     let avatarContainer = this.avatarImage;
     let output = '';
+    let classOutput = '';
+    let classes = ['', 'Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Deathknight', 'Shaman', 'Mage', 'Warlock', 'Monk', 'Druid', 'Demonhunter'];
+    let dynamicAvatarImage = `http://render-eu.worldofwarcraft.com/character/${data.thumbnail}`;
+    
+    classOutput = `<h2>${classes[data.class]}</h2>`;
 
+    // Check if the image status is 404
+    if(dynamicAvatarImage.status === 404) {
+      output += `<img src="https://us.battle.net/wow/static/images/2d/avatar/${data.race}-${data.gender}.jpg">`;
+    } else {
+      output += `<img src="${dynamicAvatarImage}"`;
+    }
+
+    // Output the rest of the player's information
     output += `
-      <img src=http://render-eu.worldofwarcraft.com/character/${data.thumbnail}>
       <br>
+      ${classOutput}
       <h2>Level: ${data.level} - ${data.name}</h2>
-    `;  
+    `;
 
     avatarContainer.innerHTML = output;
-
     spinner.style.display = 'none';
     this.clearErr();
   }
 
+  // Base Stats
   baseStats__PlayerOne(data) {
     let statsContainer = this.statsContainer;
     let output = '';
@@ -80,6 +95,7 @@ class UI__PlayerOne {
     statsContainer.innerHTML = output;
     };
 
+  // Mounts
   getMounts__PlayerOne(data) {
     let container = this.mountsContainer;
     let output = '';
@@ -118,8 +134,7 @@ class UI__PlayerOne {
       if(feed.type === "LOOT") {
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
-
+        let day = new Date(feed.timestamp);        
 
         // Output
         output += `
@@ -133,7 +148,7 @@ class UI__PlayerOne {
       if(feed.type === "ACHIEVEMENT") {
         let year = new Date(feed.timestamp);
         let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);
+        let day = new Date(feed.timestamp);        
 
         output += `
           <li class="feed-result__playerOne">
@@ -152,40 +167,229 @@ class UI__PlayerOne {
       this.refreshLinks();
   };
 
+  // Gear
   getGear__PlayerOne(data) {
     let container = this.gearContainer;
     let output = '';
 
-    output += `
-        <li>Head: ${data.items.head.itemLevel}<a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a></li>
-        <li>Neck: ${data.items.neck.itemLevel}<a href="//www.wowhead.com/item=${data.items.neck.id}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a></li>
-        <li>Shoulder: ${data.items.shoulder.itemLevel}<a href="//www.wowhead.com/item=${data.items.shoulder.id}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a></li>
-        <li>Back: ${data.items.back.itemLevel}<a href="//www.wowhead.com/item=${data.items.back.id}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a></li>
-        <li>Chest: ${data.items.chest.itemLevel}<a href="//www.wowhead.com/item=${data.items.chest.id}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a></li>
-        <li>Wrist: ${data.items.wrist.itemLevel}<a href="//www.wowhead.com/item=${data.items.wrist.id}" class="q${data.items.wrist.quality} data-wowhead="ench=${data.items.wrist.tooltipParams.enchant}"></a></li>
-        
-        <br>
-        <li>Hands: ${data.items.hands.itemLevel}<a href="//www.wowhead.com/item=${data.items.hands.id}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a></li>
-        <li>Waist: ${data.items.waist.itemLevel}<a href="//www.wowhead.com/item=${data.items.waist.id}" class="q${data.items.waist.quality}"></a></li>
-        <li>Legs: ${data.items.legs.itemLevel}<a href="//www.wowhead.com/item=${data.items.legs.id}" class="q${data.items.legs.quality}"></a></li>
-        <li>Feet: ${data.items.feet.itemLevel}<a href="//www.wowhead.com/item=${data.items.feet.id}" class="q${data.items.feet.quality}"></a></li>
-        <li>Ring: ${data.items.finger1.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger1.id}" class="q${data.items.finger1.quality}"></a></li>
-        <li>Ring: ${data.items.finger2.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger2.id}" class="q${data.items.finger2.quality}"></a></li>
-        <li>Trinket: ${data.items.trinket1.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket1.id}" class="q${data.items.trinket1.quality}"></a></li>
-        <li>Trinket: ${data.items.trinket2.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket2.id}" class="q${data.items.trinket2.quality}"></a></li>
 
-        <br>
-        <li>Main-Hand: ${data.items.mainHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.mainHand.id}" class="q${data.items.mainHand.quality}"></a></li>
-        <li>Off-Hand: ${data.items.offHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.offHand.id}" class="q${data.items.offHand.quality}"></a></li>
-    `;
+    if(data.items.head) {
+      output +=
+      `<li>Head: ${data.items.head.itemLevel}<a href="//www.wowhead.com/item=${data.items.head.id}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a></li>`
+    } else {
+      output +=
+      `<li style="color: #6a6a6a; text-align: left;">Head: None</li>`
+    };
+
+    if(data.items.neck) {
+      output += `
+      <li>Neck: ${data.items.neck.itemLevel}<a href="//www.wowhead.com/item=${data.items.neck.id}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a></li>`
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Neck: None</li>`;
+    };
+
+    if(data.items.shoulder) {
+      output += `
+      <li>Shoulder: ${data.items.shoulder.itemLevel}<a href="//www.wowhead.com/item=${data.items.shoulder.id}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a></li>`
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Shoulder: None</li>`;
+    };
+
+    if(data.items.back) {
+      output += `
+      <li>Back: ${data.items.back.itemLevel}<a href="//www.wowhead.com/item=${data.items.back.id}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a></li>`
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Back: None</li>`;
+    };
+
+    if(data.items.chest) {
+      output += `
+      <li>Chest: ${data.items.chest.itemLevel}<a href="//www.wowhead.com/item=${data.items.chest.id}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a></li>`
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Chest: None</li>`;
+    };
+
+    if(data.items.wrist) {
+      output += `
+      <li>Wrist: ${data.items.wrist.itemLevel}<a href="//www.wowhead.com/item=${data.items.wrist.id}" class="q${data.items.wrist.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Wrist: None</li>`;
+    };
+
+    // Separation
+    output += `<br>`;
+
+    if(data.items.hands) {
+      output += `
+      <li>Hands: ${data.items.hands.itemLevel}<a href="//www.wowhead.com/item=${data.items.hands.id}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Hands: None</li>`;
+    };
+
+    if(data.items.waist) {
+      output += `
+      <li>Waist: ${data.items.waist.itemLevel}<a href="//www.wowhead.com/item=${data.items.waist.id}" class="q${data.items.waist.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Waist: None</li>`;
+    };
+
+    if(data.items.legs) {
+      output += `
+      <li>Legs: ${data.items.legs.itemLevel}<a href="//www.wowhead.com/item=${data.items.legs.id}" class="q${data.items.legs.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Legs: None</li>`;
+    };
+
+    if(data.items.feet) {
+      output += `
+      <li>Feet: ${data.items.feet.itemLevel}<a href="//www.wowhead.com/item=${data.items.feet.id}" class="q${data.items.feet.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Feet: None</li>`;
+    };
+
+    if(data.items.finger1) {
+      output += `
+      <li>Ring: ${data.items.finger1.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger1.id}" class="q${data.items.finger1.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Ring: None</li>`;
+    };
+
+    if(data.items.finger2) {
+      output += `
+      <li>Ring: ${data.items.finger2.itemLevel}<a href="//www.wowhead.com/item=${data.items.finger2.id}" class="q${data.items.finger2.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Ring: None</li>`;
+    };
+
+    if(data.items.trinket1) {
+      output += `
+      <li>Trinket: ${data.items.trinket1.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket1.id}" class="q${data.items.trinket1.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Trinket: None</li>`;
+    };
+
+    if(data.items.trinket2) {
+      output += `
+      <li>Trinket: ${data.items.trinket2.itemLevel}<a href="//www.wowhead.com/item=${data.items.trinket2.id}" class="q${data.items.trinket2.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Trinket: None</li>`;
+    };
+
+    output += `<br>`;
+
+    if(data.items.mainHand) {
+      output += `
+      <li>Main-Hand: ${data.items.mainHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.mainHand.id}" class="q${data.items.mainHand.quality}"></a></li>`;
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Main-Hand: None</li>`;
+    };
+        
+    if(data.items.offHand) {
+      output += `
+        <li>Off-Hand: ${data.items.offHand.itemLevel}<a href="//www.wowhead.com/item=${data.items.offHand.id}" class="q${data.items.offHand.quality}"></a></li>`
+    } else {
+      output += `<li style="color: #6a6a6a; text-align: left;">Off-Hand: None</li>`;
+    };
 
     container.innerHTML = `
       <ul>
         <p>iLvl: ${data.items.averageItemLevelEquipped}</p>
         ${output}
       </ul>`;
+      
     this.refreshLinks();
   }
+
+  // Pets
+  getPets__PlayerOne(data) {
+    let container = this.petsContainer;
+    let output = '';
+
+    data.pets.collected.forEach((pet) => {
+      if(pet.qualityId === 3) {
+        if(pet.isFavorite) {
+          output += `
+          <li><div class="pets--rare"></div><span><i class="fas fa-star"></i> ${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+        `;
+        } else {
+          output += `
+            <li><div class="pets--rare"></div><span>${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+          `;
+        }
+      } else if(pet.qualityId === 2) {
+        if(pet.isFavorite) {
+          output += `
+            <li><div class="pets--uncommon"></div><span><span><i class="fas fa-star"></i> ${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+          `;
+        } else {
+          output += `
+          <li><div class="pets--uncommon"></div><span>${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+          `;
+        }
+      } else if(pet.qualityId === 1) {
+        if(pet.isFavorite) {
+          output += `
+            <li><div class="pets--common"></div><span><i class="fas fa-star"></i> ${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+          `; 
+        } else {
+          output += `
+          <li><div class="pets--common"></div><span>${pet.name} - LvL: ${pet.stats.level}</span><img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg"></li>
+          `;
+        }
+      };
+    });
+
+    container.innerHTML = `
+      <ul>
+        <p>Collected: ${data.pets.numCollected}</p>
+        ${output}
+      </ul>`;
+  }
+
+  // Progression
+  getProg__PlayerOne(data) {
+    let progContainer = this.progContainer;
+    let output = '';
+
+    data.progression.raids.forEach((raid) => {
+      output += `
+        <li class="playerOne__progression__box">
+          <h2 class="raid-name">${raid.name}</h2>
+          <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
+      `;/* 
+      raid.bosses.forEach((boss) => {
+        if(!boss.lfrKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
+        `; 
+        } else if(!boss.heroicKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>Normal: ${boss.normalKills}</h4>
+          `;
+        } else if(!boss.mythicKills) {
+          output += `
+            <h2 class="boss-name">${boss.name}</h2>
+            <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
+          `;
+        } else {
+          output += `
+              <h2 class="boss-name">${boss.name}</h2>
+              <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills} | Mythic ${boss.mythicKills}</h4>
+          `;
+        }
+      }); */
+      
+      output += '</li>';
+    });
+
+    progContainer.innerHTML = `
+      <ul>
+        ${output}
+      </ul>
+    `;
+  };
 
   // Error Message
   errorMessage(msg, color) {

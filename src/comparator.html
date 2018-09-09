@@ -3,6 +3,7 @@
   <div class="player">
     <form class="form form__playerOne" id="js-playerOne_Form">
       <h3>Player One</h3>
+      
       <input type="text" placeholder="Realm" id="js-playerOne_Realm">
       <br>
       <input type="text" placeholder="Name" id="js-playerOne_Name">
@@ -26,6 +27,7 @@
     <button class="btn btn--purple" id="js-stats" value="on">Stats</button>
     <button class="btn btn--purple" id="js-prog" value="off">Progress</button>
     <button class="btn btn--purple" id="js-gear" value="off">Gear</button>
+    <button class="btn btn--purple" id="js-pets" value="off">Pets</button>
   </div>
 
   <!-- <div class="line line--vertical line--short line--margin line__divide"></div> -->
@@ -42,19 +44,23 @@
       </div>
       <div class="ui__playerOne playerOne__gear" id="UI-gear__playerOne"></div>
       <div class="ui__playerOne playerOne__feed" id="UI-feed__playerOne"></div>
-      <div class="ui__playerOne playerOne__progress" id="UI-progess__playerOne"></div>
+      <div class="ui__playerOne playerOne__progress" id="UI-progress__playerOne"></div>
+      <div class="ui__playerOne playerOne__pets" id="UI-pets__playerOne"></div>
     </div>
+
     <div class="separation__playerTwo">
-      <div class="spinner" id="UI-spinner__PlayerTwo">
-        <img src="images/Eclipse-1s-93px.gif">
-      </div>
+
+    <div class="spinner" id="UI-spinner__PlayerTwo">
+      <img src="images/Eclipse-1s-93px.gif">
+    </div>
       <div class="avatar" id="UI-error__playerTwo"></div>
       <div class="avatar" id="UI-avatar__playerTwo"></div>
       <div class="ui__playerTwo playerTwo__baseStats" id="UI-mainStats__playerTwo"></div>
       <div class="ui__playerTwo playerTwo__mounts" id="UI-mounts__playerTwo"></div>
       <div class="ui__playerTwo playerTwo__gear" id="UI-gear__playerTwo"></div>
       <div class="ui__playerTwo playerTwo__feed" id="UI-feed__playerTwo"></div>
-      <div class="ui__playerTwo playerTwo__progess" id="UI-progess__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__progress" id="UI-progress__playerTwo"></div>
+      <div class="ui__playerTwo playerTwo__pets" id="UI-pets__playerTwo"></div>
     </div>
   </div>
 

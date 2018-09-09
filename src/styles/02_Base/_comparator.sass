@@ -51,10 +51,10 @@
   text-align: center
 
 // Comparator Global
-.playerOne__mounts, .playerOne__gear, .playerOne__feed, .playerOne__progress
+.playerOne__mounts, .playerOne__gear, .playerOne__feed, .playerOne__progress, .playerOne__pets
   display: none
 
-.playerTwo__mounts, .playerTwo__gear, .playerTwo__feed, .playerTwo__progess
+.playerTwo__mounts, .playerTwo__gear, .playerTwo__feed, .playerTwo__progress, .playerTwo__pets
   display: none
 
 .separation
@@ -173,6 +173,8 @@
       text-align: right
       float: right
       width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
 
       span
         position: relative
@@ -202,6 +204,8 @@
       text-align: left
       float: left
       width: 65%
+      &:hover
+        background-color: $Port_Gore-Light
 
       span
         position: relative
@@ -297,10 +301,10 @@
     li
       color: $Gamboge
       background-color: $Port_Gore
-      padding: 10px
+      padding: 15px 10px 0px 10px
       width: 100%
       height: 43px
-      margin-top: 10px
+      margin-top: 15px
       font-size: 1.2em
       text-align: right
       list-style-position: inside
@@ -325,10 +329,10 @@
     li
       color: $Gamboge
       background-color: $Port_Gore
-      padding: 10px
+      padding: 15px 10px 0px 10px
       width: 100%
       height: 43px
-      margin-top: 10px
+      margin-top: 15px
       font-size: 1.2em
       text-align: left
       list-style-position: inside
@@ -352,4 +356,138 @@
       font-size: 1.2em
       color: $Gamboge
       text-align: left
+
+
+/* 
+  
+  Pets 
+    
+  */
+.pets--rare
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: blue
+  margin-top: 2px
+
+.pets--uncommon
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: green
+  margin-top: 2px
+
+.pets--common
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $Alto
+  margin-top: 2px
+
+.playerOne__pets
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: right
+      float: right
+      width: 75%
+      &:hover
+        background-color: $Port_Gore-Light
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: right
+        margin-left: 1em
+
+      .pets--rare, .pets--uncommon, .pets--common
+        float: left
+
+    p
+      text-align: right
+      color: $Alto
+
+.playerTwo__pets
+  ul
+    li
+      border-radius: 5px
+      color: $Alto
+      background-color: $Port_Gore
+      padding: 10px
+      margin-top: 10px
+      font-size: 1.2em
+      font-weight: 200
+      text-align: left
+      float: left
+      width: 75%
+      &:hover
+        background-color: $Port_Gore-Light
+
+      span
+        position: relative
+        top: 15
+
+      img
+        float: left
+        margin-right: 1em
+
+      .pets--rare, .pets--uncommon, .pets--common
+        float: right
+
+    p
+      text-align: left
+      color: $Alto
+
+.fa-star
+  color: yellow
+
+
+/* 
+  
+  PROGRESSIONS
+
+   */
+
+.playerOne__progress
+  color: $Alto
+  text-align: right
+
+  .raid-name
+    color: $Gamboge
+
+  .boss-name
+    color: $Bright_Turquoise
+
+  .playerOne__progression__box
+    border-bottom: 1px solid $Seance
+    padding: 7px 10px 0 0
+
+    &:nth-child(odd)
+      background-color: $Port_Gore
+
+.playerTwo__progress
+  color: $Alto
+  text-align: left
+
+  .raid-name
+    color: $Gamboge
+
+  .boss-name
+    color: $Bright_Turquoise
+
+  .playerTwo__progression__box
+    border-bottom: 1px solid $Seance
+    padding: 7px 0 0 10px
+
+    &:nth-child(odd)
+      background-color: $Port_Gore
+    
         

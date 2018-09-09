@@ -6,13 +6,15 @@ class UI_State {
     this.gear_P1    = document.querySelector('.playerOne__gear');
     this.prog_P1    = document.querySelector('.playerOne__progress');
     this.feed_P1    = document.querySelector('.playerOne__feed');
+    this.pets_P1    = document.querySelector('.playerOne__pets');
 
     // Player 2
     this.stats_P2   = document.querySelector('.playerTwo__baseStats');
     this.mounts_P2  = document.querySelector('.playerTwo__mounts');
     this.gear_P2    = document.querySelector('.playerTwo__gear');
-    this.prog_P2    = document.querySelector('.playerTwo__progess');
+    this.prog_P2    = document.querySelector('.playerTwo__progress');
     this.feed_P2    = document.querySelector('.playerTwo__feed');
+    this.pets_P2    = document.querySelector('.playerTwo__pets');
 
     // Buttons
     this.btnMounts = document.querySelector('#js-mounts'),
@@ -20,6 +22,7 @@ class UI_State {
     this.btnProg   = document.querySelector('#js-prog'),
     this.btnGear   = document.querySelector('#js-gear');
     this.btnFeed   = document.querySelector('#js-feed');
+    this.btnPets   = document.querySelector('#js-pets');
   }
 
   showMounts() {
@@ -28,6 +31,7 @@ class UI_State {
       this.btnProg.value = 'off';
       this.btnGear.value = 'off';
       this.btnFeed.value = 'off';
+      this.btnPets.value = 'off';
   
       this.stats_P1.style.display = 'none';
       this.stats_P2.style.display = 'none';
@@ -37,6 +41,8 @@ class UI_State {
       this.prog_P2.style.display = 'none';
       this.feed_P1.style.display = 'none';
       this.feed_P2.style.display = 'none';
+      this.pets_P1.style.display = 'none';
+      this.pets_P2.style.display = 'none';
   
       this.mounts_P1.style.display = 'block';
       this.mounts_P2.style.display = 'block';
@@ -51,6 +57,7 @@ class UI_State {
       this.btnGear.value = 'off';
       this.btnMounts.value = 'off';
       this.btnFeed.value = 'off';
+      this.btnPets.value = 'off';
   
       this.gear_P1.style.display = 'none';
       this.gear_P2.style.display = 'none';
@@ -60,6 +67,8 @@ class UI_State {
       this.feed_P2.style.display = 'none';
       this.mounts_P1.style.display = 'none';
       this.mounts_P2.style.display = 'none';
+      this.pets_P1.style.display = 'none';
+      this.pets_P2.style.display = 'none';
       
 
       this.stats_P1.style.display = 'block';
@@ -76,6 +85,7 @@ class UI_State {
       this.btnProg.value = 'off';
       this.btnMounts.value = 'off';
       this.btnFeed.value = 'off';
+      this.btnPets.value = 'off';
   
       this.prog_P1.style.display = 'none';
       this.prog_P2.style.display = 'none';
@@ -85,6 +95,8 @@ class UI_State {
       this.stats_P2.style.display = 'none';
       this.feed_P1.style.display = 'none';
       this.feed_P2.style.display = 'none';
+      this.pets_P1.style.display = 'none';
+      this.pets_P2.style.display = 'none';
       
       this.gear_P1.style.display = 'block';
       this.gear_P2.style.display = 'block';
@@ -96,8 +108,58 @@ class UI_State {
 
 
   showProg() {
-    console.log('Prog!')
-  };
+    if(this.btnProg.value === 'off') {
+      this.btnStats.value = 'off';
+      this.btnMounts.value = 'off';
+      this.btnFeed.value = 'off';
+      this.btnGear.value = 'off';
+      this.btnPets.value = 'off';
+  
+      
+      this.mounts_P1.style.display = 'none';
+      this.mounts_P2.style.display = 'none';
+      this.stats_P1.style.display = 'none';
+      this.stats_P2.style.display = 'none';
+      this.feed_P1.style.display = 'none';
+      this.feed_P2.style.display = 'none';
+      this.gear_P1.style.display = 'none';
+      this.gear_P2.style.display = 'none';
+      this.pets_P1.style.display = 'none';
+      this.pets_P2.style.display = 'none';
+
+      this.prog_P1.style.display = 'block';
+      this.prog_P2.style.display = 'block';
+      
+      this.btnProg.value = 'on';
+    };
+  }
+
+  showPets() {
+    if(this.btnPets.value === 'off') {
+      this.btnStats.value = 'off';
+      this.btnProg.value = 'off';
+      this.btnMounts.value = 'off';
+      this.btnFeed.value = 'off';
+      this.btnGear.value = 'off';
+  
+      this.prog_P1.style.display = 'none';
+      this.prog_P2.style.display = 'none';
+      this.mounts_P1.style.display = 'none';
+      this.mounts_P2.style.display = 'none';
+      this.stats_P1.style.display = 'none';
+      this.stats_P2.style.display = 'none';
+      this.feed_P1.style.display = 'none';
+      this.feed_P2.style.display = 'none';
+      this.gear_P1.style.display = 'none';
+      this.gear_P2.style.display = 'none';
+      
+      this.pets_P1.style.display = 'block';
+      this.pets_P2.style.display = 'block';
+      
+      this.btnPets.value = 'on';
+  
+    }
+  }
 
   showFeed() {
     if(this.btnFeed.value === 'off') {
@@ -105,6 +167,7 @@ class UI_State {
       this.btnProg.value = 'off';
       this.btnMounts.value = 'off';
       this.btnGear.value = 'off';
+      this.btnPets.value = 'off';
   
       this.prog_P1.style.display = 'none';
       this.prog_P2.style.display = 'none';
@@ -114,6 +177,8 @@ class UI_State {
       this.stats_P2.style.display = 'none';
       this.gear_P1.style.display = 'none';
       this.gear_P2.style.display = 'none';
+      this.pets_P1.style.display = 'none';
+      this.pets_P2.style.display = 'none';
 
       this.feed_P1.style.display = 'block';
       this.feed_P2.style.display = 'block';
