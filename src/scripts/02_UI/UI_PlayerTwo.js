@@ -26,9 +26,10 @@ class UI__PlayerTwo {
     let output = '';
     let classOutput = '';
     let classes = ['', 'Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Deathknight', 'Shaman', 'Mage', 'Warlock', 'Monk', 'Druid', 'Demonhunter'];
+    let classColor = ['', '#C79C6E', '#F58CBA', '#ABD473', '#FFF569', '#FFFFFF', '#C41F3B', '#0070DE', '#69CCF0', '#9482C9', '#00FF96', '#FF7D0A', '#A330C9'];
     let dynamicAvatarImage = `http://render-eu.worldofwarcraft.com/character/${data.thumbnail}`;
     
-    classOutput = `<h2>${classes[data.class]}</h2>`;
+    classOutput = `<h2 style="color: ${classColor[data.class]}">${classes[data.class]}</h2>`;
 
     // Check if the image status is 404
     if(dynamicAvatarImage.status === 404) {

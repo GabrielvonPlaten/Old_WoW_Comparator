@@ -29,9 +29,10 @@ class UI__PlayerOne {
     let output = '';
     let classOutput = '';
     let classes = ['', 'Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Deathknight', 'Shaman', 'Mage', 'Warlock', 'Monk', 'Druid', 'Demonhunter'];
+    let classColor = ['', '#C79C6E', '#F58CBA', '#ABD473', '#FFF569', '#FFFFFF', '#C41F3B', '#0070DE', '#69CCF0', '#9482C9', '#00FF96', '#FF7D0A', '#A330C9'];
     let dynamicAvatarImage = `http://render-eu.worldofwarcraft.com/character/${data.thumbnail}`;
     
-    classOutput = `<h2>${classes[data.class]}</h2>`;
+    classOutput = `<h2 style="color: ${classColor[data.class]}">${classes[data.class]}</h2>`;
 
     // Check if the image status is 404
     if(dynamicAvatarImage.status === 404) {
@@ -140,7 +141,7 @@ class UI__PlayerOne {
         output += `
           <li class="feed-result__playerOne">
             <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
-            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+            <p class="date">${day.getDate()}/${1 + (month.getMonth())}/${year.getFullYear()}</p>
           </li>
         `;
       }
@@ -153,7 +154,7 @@ class UI__PlayerOne {
         output += `
           <li class="feed-result__playerOne">
           <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
-            <p class="date">${day.getDate()}/${month.getMonth()}/${year.getFullYear()}</p>
+            <p class="date">${day.getDate()}/${1 + (month.getMonth())}/${year.getFullYear()}</p>
           </li>
         `;
       }
