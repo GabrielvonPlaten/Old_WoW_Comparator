@@ -25,7 +25,6 @@ playerOne_Form.addEventListener('submit', (e) => {
       .then(data => {
         ui_P_One.avatar__PlayerOne(data)
         ui_P_One.baseStats__PlayerOne(data)
-        console.log(data);
       })
       .catch(() => {
         ui_P_One.errorMessage('Wrong input or player not found.', 'red');
@@ -39,7 +38,7 @@ playerOne_Form.addEventListener('submit', (e) => {
 
       // Feed
       http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
-      .then(data => {
+        .then(data => {
         ui_P_One.getFeed__PlayerOne(data);
       })
 
