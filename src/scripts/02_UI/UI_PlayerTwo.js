@@ -356,30 +356,7 @@ class UI__PlayerTwo {
         <li class="playerTwo__progression__box">
           <h2 class="raid-name">${raid.name}</h2>
           <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
-      `;/* 
-      raid.bosses.forEach((boss) => {
-        if(!boss.lfrKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
-        `; 
-        } else if(!boss.heroicKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>Normal: ${boss.normalKills}</h4>
-          `;
-        } else if(!boss.mythicKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
-          `;
-        } else {
-          output += `
-              <h2 class="boss-name">${boss.name}</h2>
-              <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills} | Mythic ${boss.mythicKills}</h4>
-          `;
-        }
-      }); */
+      `;
       
       output += '</li>';
     });

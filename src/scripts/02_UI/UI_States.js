@@ -102,7 +102,6 @@ class UI_State {
       this.gear_P2.style.display = 'block';
       
       this.btnGear.value = 'on';
-  
     }
   }
 
@@ -157,7 +156,6 @@ class UI_State {
       this.pets_P2.style.display = 'block';
       
       this.btnPets.value = 'on';
-  
     }
   }
 

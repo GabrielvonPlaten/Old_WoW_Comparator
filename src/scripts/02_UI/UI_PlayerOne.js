@@ -28,6 +28,8 @@ class UI__PlayerOne {
     let avatarContainer = this.avatarImage;
     let output = '';
     let classOutput = '';
+
+    // The index of the variables classes and classColor are matched.
     let classes = ['', 'Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Deathknight', 'Shaman', 'Mage', 'Warlock', 'Monk', 'Druid', 'Demonhunter'];
     let classColor = ['', '#C79C6E', '#F58CBA', '#ABD473', '#FFF569', '#FFFFFF', '#C41F3B', '#0070DE', '#69CCF0', '#9482C9', '#00FF96', '#FF7D0A', '#A330C9'];
     let dynamicAvatarImage = `http://render-eu.worldofwarcraft.com/character/${data.thumbnail}`;
@@ -128,36 +130,25 @@ class UI__PlayerOne {
   getFeed__PlayerOne(data) {
     let container = this.feedContainer;
     let output = '';
-
   
     data.feed.forEach((feed) => {
 
-      if(feed.type === "LOOT") {
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);        
+      let year = new Date(feed.timestamp);
+      let month = new Date(feed.timestamp);
+      let day = new Date(feed.timestamp); 
+      
+      output += `
+        <li class="feed-result__playerOne">
+      `;
 
-        // Output
-        output += `
-          <li class="feed-result__playerOne">
-            <a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>
-            <p class="date">${day.getDate()}/${1 + (month.getMonth())}/${year.getFullYear()}</p>
-          </li>
-        `;
-      }
+      feed.type === "LOOT" ? 
+        output += `<a target="_blank" class="q" href="//www.wowhead.com/?item=${feed.itemId}" data-wowhead="item=${feed.itemId}"></a>` 
+        : output += `<a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>`;
 
-      if(feed.type === "ACHIEVEMENT") {
-        let year = new Date(feed.timestamp);
-        let month = new Date(feed.timestamp);
-        let day = new Date(feed.timestamp);        
-
-        output += `
-          <li class="feed-result__playerOne">
-          <a class="q1" target="_blank" href="//www.wowhead.com/achievement=${feed.achievement.id}"><img src="https://wow.zamimg.com/images/wow/icons/large/${feed.achievement.icon}.jpg"></a>
-            <p class="date">${day.getDate()}/${1 + (month.getMonth())}/${year.getFullYear()}</p>
-          </li>
-        `;
-      }
+      output += `
+          <p class="date">${day.getDate()}/${1 + (month.getMonth())}/${year.getFullYear()}</p>
+        </li>
+      `;
     });
 
     container.innerHTML = `
@@ -357,30 +348,7 @@ class UI__PlayerOne {
         <li class="playerOne__progression__box">
           <h2 class="raid-name">${raid.name}</h2>
           <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
-      `;/* 
-      raid.bosses.forEach((boss) => {
-        if(!boss.lfrKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
-        `; 
-        } else if(!boss.heroicKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>Normal: ${boss.normalKills}</h4>
-          `;
-        } else if(!boss.mythicKills) {
-          output += `
-            <h2 class="boss-name">${boss.name}</h2>
-            <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills}</h4>
-          `;
-        } else {
-          output += `
-              <h2 class="boss-name">${boss.name}</h2>
-              <h4>LRF: ${boss.lfrKills} | Normal: ${boss.normalKills} | Heroic ${boss.heroicKills} | Mythic ${boss.mythicKills}</h4>
-          `;
-        }
-      }); */
+      `;
       
       output += '</li>';
     });
