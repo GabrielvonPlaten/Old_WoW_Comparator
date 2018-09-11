@@ -13,7 +13,7 @@ http://wowcomparator.surge.sh
 * JavaScript
 * Gulp
 
-### How to use
+## How to use
 Once you enter the website, click on the button **Start Comparing**. There, you have two fields for each player to field.
 In the *Realm* field, you have to enter the realm of the character that resides in. And in the field below that, it is the *Name* field. There, you have to put the name of the character.
 
