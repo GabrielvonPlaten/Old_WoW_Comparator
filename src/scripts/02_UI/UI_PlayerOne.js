@@ -27,24 +27,18 @@ class UI__PlayerOne {
     let spinner = this.spinner;
     let avatarContainer = this.avatarImage;
     let output = '';
-    let classOutput = '';
 
     // The index of the variables classes and classColor are matched.
     let classes = ['', 'Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Deathknight', 'Shaman', 'Mage', 'Warlock', 'Monk', 'Druid', 'Demonhunter'];
     let classColor = ['', '#C79C6E', '#F58CBA', '#ABD473', '#FFF569', '#FFFFFF', '#C41F3B', '#0070DE', '#69CCF0', '#9482C9', '#00FF96', '#FF7D0A', '#A330C9'];
     let dynamicAvatarImage = `http://render-eu.worldofwarcraft.com/character/${data.thumbnail}`;
+    let backdropAvatarImage = `https://us.battle.net/wow/static/images/2d/avatar/${data.race}-${data.gender}.jpg`;
     
-    classOutput = `<h2 style="color: ${classColor[data.class]}">${classes[data.class]}</h2>`;
-
-    // Check if the image status is 404
-    if(dynamicAvatarImage.status === 404) {
-      output += `<img src="https://us.battle.net/wow/static/images/2d/avatar/${data.race}-${data.gender}.jpg">`;
-    } else {
-      output += `<img src="${dynamicAvatarImage}"`;
-    }
-
+    let classOutput = `<h2 style="color: ${classColor[data.class]}">${classes[data.class]}</h2>`;
+    
     // Output the rest of the player's information
     output += `
+      <img src="${dynamicAvatarImage}" onerror="if (this.src != '${backdropAvatarImage}') this.src = '${backdropAvatarImage}';">
       <br>
       ${classOutput}
       <h2>Level: ${data.level} - ${data.name}</h2>
