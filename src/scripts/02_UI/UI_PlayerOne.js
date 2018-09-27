@@ -163,7 +163,7 @@ class UI__PlayerOne {
       output +=
       `<li>Head: ${data.items.head.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.head.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.head.id}&bonus=${data.items.head.bonusLists[0]}:${data.items.head.bonusLists[1]}:${data.items.head.bonusLists[2]}:${data.items.head.bonusLists[3]}&ilvl=${data.items.head.itemLevel}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.head.id}&bonus=${data.items.head.bonusLists[0]}:${data.items.head.bonusLists[1]}:${data.items.head.bonusLists[2]}:${data.items.head.bonusLists[3]}&ilvl=${data.items.head.itemLevel}" class="q${data.items.head.quality} data-wowhead="ench=${data.items.head.tooltipParams.enchant}"></a>
       </li>`
     } else {
       output += `${noGearFoundOutput}Head: None</li>`
@@ -173,7 +173,7 @@ class UI__PlayerOne {
       output += `
       <li>Neck: ${data.items.neck.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.neck.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.neck.id}&bonus=${data.items.neck.bonusLists[0]}:${data.items.neck.bonusLists[1]}:${data.items.neck.bonusLists[2]}:${data.items.neck.bonusLists[3]}&ilvl=${data.items.neck.itemLevel}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.neck.id}&bonus=${data.items.neck.bonusLists[0]}:${data.items.neck.bonusLists[1]}:${data.items.neck.bonusLists[2]}:${data.items.neck.bonusLists[3]}&ilvl=${data.items.neck.itemLevel}" class="q${data.items.neck.quality} data-wowhead="gems=${data.items.neck.tooltipParams.gem0}&amp;ench=${data.items.neck.tooltipParams.enchant}"></a>
       </li>`
     } else {
       output += `${noGearFoundOutput}Neck: None</li>`;
@@ -183,7 +183,7 @@ class UI__PlayerOne {
       output += `
       <li>Shoulder: ${data.items.shoulder.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.shoulder.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.shoulder.id}&bonus=${data.items.shoulder.bonusLists[0]}:${data.items.shoulder.bonusLists[1]}:${data.items.shoulder.bonusLists[2]}:${data.items.shoulder.bonusLists[3]}&ilvl=${data.items.shoulder.itemLevel}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.shoulder.id}&bonus=${data.items.shoulder.bonusLists[0]}:${data.items.shoulder.bonusLists[1]}:${data.items.shoulder.bonusLists[2]}:${data.items.shoulder.bonusLists[3]}&ilvl=${data.items.shoulder.itemLevel}" class="q${data.items.shoulder.quality} data-wowhead="ench=${data.items.shoulder.tooltipParams.enchant}"></a>
       </li>`
     } else {
       output += `${noGearFoundOutput}Shoulder: None</li>`;
@@ -193,7 +193,7 @@ class UI__PlayerOne {
       output += `
       <li>Back: ${data.items.back.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.back.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.back.id}&bonus=${data.items.back.bonusLists[0]}:${data.items.back.bonusLists[1]}:${data.items.back.bonusLists[2]}:${data.items.back.bonusLists[3]}&ilvl=${data.items.back.itemLevel}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.back.id}&bonus=${data.items.back.bonusLists[0]}:${data.items.back.bonusLists[1]}:${data.items.back.bonusLists[2]}:${data.items.back.bonusLists[3]}&ilvl=${data.items.back.itemLevel}" class="q${data.items.back.quality} data-wowhead="ench=${data.items.back.tooltipParams.enchant}"></a>
       </li>`
     } else {
       output += `${noGearFoundOutput}Back: None</li>`;
@@ -203,7 +203,7 @@ class UI__PlayerOne {
       output += `
       <li>Chest: ${data.items.chest.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.chest.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.chest.id}&bonus=${data.items.chest.bonusLists[0]}:${data.items.chest.bonusLists[1]}:${data.items.chest.bonusLists[2]}:${data.items.chest.bonusLists[3]}&ilvl=${data.items.chest.itemLevel}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.chest.id}&bonus=${data.items.chest.bonusLists[0]}:${data.items.chest.bonusLists[1]}:${data.items.chest.bonusLists[2]}:${data.items.chest.bonusLists[3]}&ilvl=${data.items.chest.itemLevel}" class="q${data.items.chest.quality} data-wowhead="ench=${data.items.chest.tooltipParams.enchant}"></a>
       </li>`
     } else {
       output += `${noGearFoundOutput}Chest: None</li>`;
@@ -214,7 +214,7 @@ class UI__PlayerOne {
       output += `
       <li>Wrist: ${data.items.wrist.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.wrist.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.wrist.id}&bonus=${data.items.wrist.bonusLists[0]}:${data.items.wrist.bonusLists[1]}:${data.items.wrist.bonusLists[2]}:${data.items.wrist.bonusLists[3]}&ilvl=${data.items.wrist.itemLevel}" class="q${data.items.wrist.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.wrist.id}&bonus=${data.items.wrist.bonusLists[0]}:${data.items.wrist.bonusLists[1]}:${data.items.wrist.bonusLists[2]}:${data.items.wrist.bonusLists[3]}&ilvl=${data.items.wrist.itemLevel}" class="q${data.items.wrist.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Wrist: None</li>`;
@@ -227,7 +227,7 @@ class UI__PlayerOne {
       output += `
       <li>Hands: ${data.items.hands.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.hands.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.hands.id}&bonus=${data.items.hands.bonusLists[0]}:${data.items.hands.bonusLists[1]}:${data.items.hands.bonusLists[2]}:${data.items.hands.bonusLists[3]}&ilvl=${data.items.hands.itemLevel}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.hands.id}&bonus=${data.items.hands.bonusLists[0]}:${data.items.hands.bonusLists[1]}:${data.items.hands.bonusLists[2]}:${data.items.hands.bonusLists[3]}&ilvl=${data.items.hands.itemLevel}" class="q${data.items.hands.quality}" data-wowhead="ench=${data.items.hands.tooltipParams.enchant}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Hands: None</li>`;
@@ -237,7 +237,7 @@ class UI__PlayerOne {
       output += `
       <li>Waist: ${data.items.waist.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.waist.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.waist.id}&bonus=${data.items.waist.bonusLists[0]}:${data.items.waist.bonusLists[1]}:${data.items.waist.bonusLists[2]}:${data.items.waist.bonusLists[3]}&ilvl=${data.items.waist.itemLevel}" class="q${data.items.waist.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.waist.id}&bonus=${data.items.waist.bonusLists[0]}:${data.items.waist.bonusLists[1]}:${data.items.waist.bonusLists[2]}:${data.items.waist.bonusLists[3]}&ilvl=${data.items.waist.itemLevel}" class="q${data.items.waist.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Waist: None</li>`;
@@ -247,7 +247,7 @@ class UI__PlayerOne {
       output += `
       <li>Legs: ${data.items.legs.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.legs.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.legs.id}&bonus=${data.items.legs.bonusLists[0]}:${data.items.legs.bonusLists[1]}:${data.items.legs.bonusLists[2]}:${data.items.legs.bonusLists[3]}&ilvl=${data.items.legs.itemLevel}" class="q${data.items.legs.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.legs.id}&bonus=${data.items.legs.bonusLists[0]}:${data.items.legs.bonusLists[1]}:${data.items.legs.bonusLists[2]}:${data.items.legs.bonusLists[3]}&ilvl=${data.items.legs.itemLevel}" class="q${data.items.legs.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Legs: None</li>`;
@@ -257,7 +257,7 @@ class UI__PlayerOne {
       output += `
       <li>Feet: ${data.items.feet.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.feet.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.feet.id}&bonus=${data.items.feet.bonusLists[0]}:${data.items.feet.bonusLists[1]}:${data.items.feet.bonusLists[2]}:${data.items.feet.bonusLists[3]}&ilvl=${data.items.feet.itemLevel}" class="q${data.items.feet.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.feet.id}&bonus=${data.items.feet.bonusLists[0]}:${data.items.feet.bonusLists[1]}:${data.items.feet.bonusLists[2]}:${data.items.feet.bonusLists[3]}&ilvl=${data.items.feet.itemLevel}" class="q${data.items.feet.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Feet: None</li>`;
@@ -267,7 +267,7 @@ class UI__PlayerOne {
       output += `
       <li>Ring: ${data.items.finger1.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.finger1.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.finger1.id}&bonus=${data.items.finger1.bonusLists[0]}:${data.items.finger1.bonusLists[1]}:${data.items.finger1.bonusLists[2]}:${data.items.finger1.bonusLists[3]}&ilvl=${data.items.finger1.itemLevel}" class="q${data.items.finger1.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.finger1.id}&bonus=${data.items.finger1.bonusLists[0]}:${data.items.finger1.bonusLists[1]}:${data.items.finger1.bonusLists[2]}:${data.items.finger1.bonusLists[3]}&ilvl=${data.items.finger1.itemLevel}" class="q${data.items.finger1.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Ring: None</li>`;
@@ -277,7 +277,7 @@ class UI__PlayerOne {
       output += `
       <li>Ring: ${data.items.finger2.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.finger2.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.finger2.id}&bonus=${data.items.finger2.bonusLists[0]}:${data.items.finger2.bonusLists[1]}:${data.items.finger2.bonusLists[2]}:${data.items.finger2.bonusLists[3]}&ilvl=${data.items.finger2.itemLevel}" class="q${data.items.finger2.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.finger2.id}&bonus=${data.items.finger2.bonusLists[0]}:${data.items.finger2.bonusLists[1]}:${data.items.finger2.bonusLists[2]}:${data.items.finger2.bonusLists[3]}&ilvl=${data.items.finger2.itemLevel}" class="q${data.items.finger2.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Ring: None</li>`;
@@ -287,7 +287,7 @@ class UI__PlayerOne {
       output += `
       <li>Trinket: ${data.items.trinket1.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.trinket1.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.trinket1.id}&bonus=${data.items.trinket1.bonusLists[0]}:${data.items.trinket1.bonusLists[1]}:${data.items.trinket1.bonusLists[2]}:${data.items.trinket1.bonusLists[3]}&ilvl=${data.items.trinket1.itemLevel}" class="q${data.items.trinket1.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.trinket1.id}&bonus=${data.items.trinket1.bonusLists[0]}:${data.items.trinket1.bonusLists[1]}:${data.items.trinket1.bonusLists[2]}:${data.items.trinket1.bonusLists[3]}&ilvl=${data.items.trinket1.itemLevel}" class="q${data.items.trinket1.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Trinket: None</li>`;
@@ -297,7 +297,7 @@ class UI__PlayerOne {
       output += `
       <li>Trinket: ${data.items.trinket2.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.trinket2.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.trinket2.id}&bonus=${data.items.trinket2.bonusLists[0]}:${data.items.trinket2.bonusLists[1]}:${data.items.trinket2.bonusLists[2]}:${data.items.trinket2.bonusLists[3]}&ilvl=${data.items.trinket2.itemLevel}" class="q${data.items.trinket2.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.trinket2.id}&bonus=${data.items.trinket2.bonusLists[0]}:${data.items.trinket2.bonusLists[1]}:${data.items.trinket2.bonusLists[2]}:${data.items.trinket2.bonusLists[3]}&ilvl=${data.items.trinket2.itemLevel}" class="q${data.items.trinket2.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Trinket: None</li>`;
@@ -309,7 +309,7 @@ class UI__PlayerOne {
       output += `
       <li>Main-Hand: ${data.items.mainHand.itemLevel}
         <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.mainHand.icon}.jpg>
-        <a href="//www.wowhead.com/item=${data.items.mainHand.id}&bonus=${data.items.mainHand.bonusLists[0]}:${data.items.mainHand.bonusLists[1]}:${data.items.mainHand.bonusLists[2]}:${data.items.mainHand.bonusLists[3]}&ilvl=${data.items.mainHand.itemLevel}" class="q${data.items.mainHand.quality}"></a>
+        <a target="_blank" href="//www.wowhead.com/item=${data.items.mainHand.id}&bonus=${data.items.mainHand.bonusLists[0]}:${data.items.mainHand.bonusLists[1]}:${data.items.mainHand.bonusLists[2]}:${data.items.mainHand.bonusLists[3]}&ilvl=${data.items.mainHand.itemLevel}" class="q${data.items.mainHand.quality}"></a>
       </li>`;
     } else {
       output += `${noGearFoundOutput}Main-Hand: None</li>`;
@@ -319,7 +319,7 @@ class UI__PlayerOne {
       output += `
         <li>Off-Hand: ${data.items.offHand.itemLevel}
           <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.offHand.icon}.jpg>
-          <a href="//www.wowhead.com/item=${data.items.offHand.id}&bonus=${data.items.offHand.bonusLists[0]}:${data.items.offHand.bonusLists[1]}:${data.items.offHand.bonusLists[2]}:${data.items.offHand.bonusLists[3]}&ilvl=${data.items.offHand.itemLevel}" class="q${data.items.offHand.quality}"></a>
+          <a target="_blank" href="//www.wowhead.com/item=${data.items.offHand.id}&bonus=${data.items.offHand.bonusLists[0]}:${data.items.offHand.bonusLists[1]}:${data.items.offHand.bonusLists[2]}:${data.items.offHand.bonusLists[3]}&ilvl=${data.items.offHand.itemLevel}" class="q${data.items.offHand.quality}"></a>
         </li>`
     } else {
       output += `${noGearFoundOutput}Off-Hand: None</li>`;
