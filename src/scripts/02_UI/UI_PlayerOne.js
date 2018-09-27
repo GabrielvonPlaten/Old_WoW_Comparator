@@ -286,7 +286,7 @@ class UI__PlayerOne {
     if(data.items.trinket1) {
       output += `
       <li>Trinket: ${data.items.trinket1.itemLevel}
-        <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.trinket2.icon}.jpg>
+        <img src=https://wow.zamimg.com/images/wow/icons/large/${data.items.trinket1.icon}.jpg>
         <a href="//www.wowhead.com/item=${data.items.trinket1.id}&bonus=${data.items.trinket1.bonusLists[0]}:${data.items.trinket1.bonusLists[1]}:${data.items.trinket1.bonusLists[2]}:${data.items.trinket1.bonusLists[3]}&ilvl=${data.items.trinket1.itemLevel}" class="q${data.items.trinket1.quality}"></a>
       </li>`;
     } else {
