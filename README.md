@@ -27,3 +27,4 @@ In the *Realm* field, you have to enter the realm of the character that resides 
 - Argent Dawn | Viera
 - Tyrande | Pelotiketo
 - Tyrande | Senzani
+- Tyrande | Gabreantthh
