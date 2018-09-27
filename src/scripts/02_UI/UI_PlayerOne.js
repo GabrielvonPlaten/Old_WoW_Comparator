@@ -410,17 +410,91 @@ class UI__PlayerOne {
     let progContainer = this.progContainer;
     let output = '';
 
-    data.progression.raids.forEach((raid) => {
-      output += `
-        <li class="playerOne__progression__box">
-          <h2 class="raid-name">${raid.name}</h2>
-          <h4>LRF: ${raid.lfr} | Normal: ${raid.normal} | Heroic: ${raid.heroic} | Mythic: ${raid.mythic}</h4>
-      `;
-      
-      output += '</li>';
-    });
+    output += `
+      <li>
+        <img src="images/01_Taloc.png">
+        <h2>Taloc</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[0].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[0].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[0].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[0].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/02_MOTHER.png">
+        <h2>MOTHER</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[1].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[1].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[1].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[1].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/03_Fetid.png">
+        <h2>Fetid Devourer</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[2].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[2].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[2].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[2].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/04_ZekVoz.png">
+        <h2>Zek'Voz, Herald of N'Zoth</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[3].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[3].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[3].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[3].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/05_Vectis.png">
+        <h2>Vectis</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[4].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[4].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[4].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[4].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/06_Zul.png">
+        <h2>Zul, Reborn</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[5].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[5].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[5].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[5].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/07_Mythrax.png">
+        <h2>Mythrax the Unraveler</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[6].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[6].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[6].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[6].mythicKills}</li>
+        </ul>
+      </li>
+      <li>
+        <img src="images/08_G'huun.png">
+        <h2>G'huun</h2>
+        <ul class="total-kills__list">
+          <li>LFR: ${data.progression.raids[21].bosses[7].lfrKills}</li>
+          <li>Normal: ${data.progression.raids[21].bosses[7].normalKills}</li>
+          <li>Heroic: ${data.progression.raids[21].bosses[7].heroicKills}</li>
+          <li>Mythic: ${data.progression.raids[21].bosses[7].mythicKills}</li>
+        </ul>
+      </li>
+    `;
 
     progContainer.innerHTML = `
+      <h1 class="progression__title">Uldir</h1>
       <ul>
         ${output}
       </ul>

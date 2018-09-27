@@ -463,37 +463,55 @@
    */
 
 .playerOne__progress
-  color: $Alto
-  text-align: right
+  color: white
 
-  .raid-name
-    color: $Gamboge
+  > ul
+    padding-top: 3%
+    border-radius: 8px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    background: url('..//images/Nazmir.jpg')
+    background-repeat: no-repeat
+    background-color: darken($Port_Gore, 8%)
+    background-blend-mode: soft-light
 
-  .boss-name
-    color: $Bright_Turquoise
+    h2
+      color: $Gamboge
 
-  .playerOne__progression__box
-    border-bottom: 1px solid $Seance
-    padding: 7px 10px 0 0
-
-    &:nth-child(odd)
-      background-color: $Port_Gore
+    li
+      text-align: center
+      margin-bottom: 10%
+      font-weight: 600
 
 .playerTwo__progress
-  color: $Alto
-  text-align: left
+  color: white
 
-  .raid-name
-    color: $Gamboge
+  > ul
+    padding-top: 3%
+    border-radius: 8px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    background: url('..//images/Nazmir.jpg')
+    background-repeat: no-repeat
+    background-color: darken($Port_Gore, 8%)
+    background-blend-mode: soft-light
 
-  .boss-name
-    color: $Bright_Turquoise
+    h2
+      color: $Gamboge
 
-  .playerTwo__progression__box
-    border-bottom: 1px solid $Seance
-    padding: 7px 0 0 10px
+    li
+      text-align: center
+      margin-bottom: 10%
+      font-weight: 600
 
-    &:nth-child(odd)
-      background-color: $Port_Gore
+.total-kills__list
+  margin: 0 auto
+  width: 50%
+  display: grid
+  grid-template-columns: 1fr 1fr
+
+.progression__title
+  text-align: center
+
     
         
