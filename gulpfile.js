@@ -72,7 +72,7 @@ gulp.task('default', [
 gulp.task('watch', () => {
   gulp.watch('src/**/*.html', ['copyHTML']);
   gulp.watch('src/**/*.html', ['fileinclude']);
-  gulp.watch('src/styles/images/*', ['imagemin']);
+  gulp.watch('src/styles/images/**/*', ['imagemin']);
   gulp.watch('src/styles/**/*.sass', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['scripts']);
 });

@@ -83,7 +83,6 @@ playerTwo_Form.addEventListener('submit', (e) => {
         .then(data => {
           ui_P_Two.avatar__PlayerTwo(data)
           ui_P_Two.baseStats__PlayerTwo(data);
-          console.log(data)
         })
         .catch(() => {
           ui_P_Two.errorMessage('Wrong input or player not found.', 'red');
