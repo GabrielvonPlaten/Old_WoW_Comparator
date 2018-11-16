@@ -1,4 +1,4 @@
-const API_KEY = 'cssxkvznfbce4tn3tqqw29q3ffd2n563';
+const API_KEY = 'US08JpLkGagEfr2KqctH1O087xEz9i0SAz';
 
 let playerOne_Form = document.querySelector('#js-playerOne_Form'),
     playerTwo_Form = document.querySelector('#js-playerTwo_Form');
@@ -21,7 +21,7 @@ playerOne_Form.addEventListener('submit', (e) => {
   } else {
     ui_P_One.loading();
     // Avatar & Stats
-    http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
+    http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=stats&locale=en_GB&access_token=${API_KEY}`)
       .then(data => {
         ui_P_One.avatar__PlayerOne(data)
         ui_P_One.baseStats__PlayerOne(data)
@@ -31,31 +31,31 @@ playerOne_Form.addEventListener('submit', (e) => {
       });
 
       // Mounts
-      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=mounts&locale=en_GB&apikey=${API_KEY}`)
+      http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=mounts&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_One.getMounts__PlayerOne(data);
         });
 
       // Feed
-      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
+      http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=feed&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
         ui_P_One.getFeed__PlayerOne(data);
       })
 
       // Gear
-      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
+      http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=items&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_One.getGear__PlayerOne(data);
         });
 
       // Pets
-      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
+      http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=pets&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_One.getPets__PlayerOne(data);
         });
 
       // Progression
-      http_playerOne.get_API(`https://eu.api.battle.net/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
+      http_playerOne.get_API(`https://eu.api.blizzard.com/wow/character/${playerOne_Realm}/${playerOne_Name}?fields=progression&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_One.getProg__PlayerOne(data);
       });
@@ -79,7 +79,7 @@ playerTwo_Form.addEventListener('submit', (e) => {
       } else {
         ui_P_Two.loading();
         // Avatar & Stats
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=stats&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=stats&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.avatar__PlayerTwo(data)
           ui_P_Two.baseStats__PlayerTwo(data);
@@ -90,31 +90,31 @@ playerTwo_Form.addEventListener('submit', (e) => {
         });
 
         // Mounts
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=mounts&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=mounts&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.getMounts__PlayerTwo(data);
         });
 
         // Feed
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=feed&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=feed&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.getFeed__PlayerTwo(data);
         })
 
         // Gear
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=items&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=items&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.getGear__PlayerTwo(data);
         });
 
         // Pets
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=pets&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=pets&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.getPets__PlayerTwo(data);
         });
 
         // Progression
-        http_playerTwo.get_API(`https://eu.api.battle.net/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=progression&locale=en_GB&apikey=${API_KEY}`)
+        http_playerTwo.get_API(`https://eu.api.blizzard.com/wow/character/${playerTwo_Realm}/${playerTwo_Name}?fields=progression&locale=en_GB&access_token=${API_KEY}`)
         .then(data => {
           ui_P_Two.getProg__PlayerTwo(data);
         });
