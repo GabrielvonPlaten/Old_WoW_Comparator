@@ -356,7 +356,7 @@ class UI__PlayerTwo {
           output += `
           <li>
             <div class="pets--rare"></div>
-            <span>${pet.name} - LvL: ${pet.stats.level} <i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i> LvL: ${pet.stats.level} - ${pet.name} </span>
             <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
           </li>
         `;
@@ -364,7 +364,7 @@ class UI__PlayerTwo {
           output += `
             <li>
               <div class="pets--rare"></div>
-              <span>${pet.name} - LvL: ${pet.stats.level}</span>
+              <span>LvL: ${pet.stats.level} - ${pet.name} </span>
               <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
             </li>
           `;
@@ -374,7 +374,7 @@ class UI__PlayerTwo {
           output += `
             <li>
               <div class="pets--uncommon"></div>
-              <span><span>${pet.name} - LvL: ${pet.stats.level} <i class="fas fa-star"></i></span>
+              <span><span><i class="fas fa-star"></i> LvL: ${pet.stats.level} - ${pet.name} </span>
               <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
             </li>
           `;
@@ -382,7 +382,7 @@ class UI__PlayerTwo {
           output += `
           <li>
             <div class="pets--uncommon"></div>
-            <span>${pet.name} - LvL: ${pet.stats.level}</span>
+            <span>LvL: ${pet.stats.level} - ${pet.name} </span>
             <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
           </li>
           `;
@@ -392,7 +392,7 @@ class UI__PlayerTwo {
           output += `
             <li>
               <div class="pets--common"></div>
-              <span>${pet.name} - LvL: ${pet.stats.level} <i class="fas fa-star"></i></span>
+              <span><i class="fas fa-star"></i> LvL: ${pet.stats.level} - ${pet.name} </span>
               <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
             </li>
           `; 
@@ -400,7 +400,7 @@ class UI__PlayerTwo {
           output += `
           <li>
             <div class="pets--common"></div>
-            <span>${pet.name} - LvL: ${pet.stats.level}</span>
+            <span>LvL: ${pet.stats.level} - ${pet.name} </span>
             <img src="https://wow.zamimg.com/images/wow/icons/large/${pet.icon}.jpg" onerror="if (this.src != '${backdropPetImage}') this.src = '${backdropPetImage}';">
           </li>
           `;
