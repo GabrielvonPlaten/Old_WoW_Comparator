@@ -1,4 +1,4 @@
-# This Project is being rebuilt using Vue.js and Node on another repository.
+# This Project is being rebuilt using Vue.js and Node. Visit the new repositories to view the progress.
 Front End: https://github.com/GabrielvonPlaten/WoW_Comparator_Client
 
 Back End: https://github.com/GabrielvonPlaten/WoW_Comparator_Server
