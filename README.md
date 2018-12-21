@@ -1,5 +1,6 @@
 # This Project is being rebuilt using Vue.js and Node on another repository.
 Front End: https://github.com/GabrielvonPlaten/WoW_Comparator_Client
+
 Back End: https://github.com/GabrielvonPlaten/WoW_Comparator_Server
 
 # WoW_Comparator
