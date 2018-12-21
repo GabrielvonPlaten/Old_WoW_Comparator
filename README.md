@@ -1,3 +1,5 @@
+# This Project is being rebuilt using Vue.js and Node on another repository.
+The new repo: https://github.com/GabrielvonPlaten/WoW_Comparator
 
 # WoW_Comparator
 WoW_Comparator compares two *EU* characters from the massive multipleyer video game World of Warcraft.
